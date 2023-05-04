@@ -7,6 +7,10 @@
   padding-left: 25%;
 }
 
+.carLatest h6 {
+  margin-top: 10%;
+}
+
 .carCard {
   width: 10rem;
   height: 10rem;

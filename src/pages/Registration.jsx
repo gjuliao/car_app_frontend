@@ -1,12 +1,10 @@
-import React from 'react'
-import SignUp from '../components/UI/SignUp'
+import React from 'react';
+import SignUp from '../components/UI/SignUp';
 
-const Registration = () => {
-  return (
-    <>
+const Registration = () => (
+  <>
     <SignUp />
-    </>
-  )
-}
+  </>
+);
 
-export default Registration
+export default Registration;

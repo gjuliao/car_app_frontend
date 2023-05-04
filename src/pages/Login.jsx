@@ -1,6 +1,7 @@
 import React from 'react';
 import styles from '../styles/Login.module.css';
 import logo from '../assets/images/logo.png';
+import { Link } from 'react-router-dom';
 
 const Login = () => (
   <section className={styles.onTopContainer}>
@@ -15,7 +16,7 @@ const Login = () => (
           <input type="text" placeholder='User' />
           <input type="password" placeholder='Password' />
           <button>LOGIN</button>
-          <a href="/register">Create account</a>
+          <Link to="/register">Create account</Link>
         </form>
       </div>
     </div>

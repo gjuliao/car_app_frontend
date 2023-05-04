@@ -12,6 +12,7 @@ import Login from './pages/Login';
 import DeleteCar from './pages/DeleteCar';
 import Car from './pages/Car';
 import './App.css';
+import Registration from './pages/Registration';
 
 const App = () => (
   <div className="container">
@@ -19,6 +20,7 @@ const App = () => (
     <div className="content">
       <Routes>
         <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Registration />} />
         <Route path="/cars" element={<Car />} />
         <Route element={<SecureRoute />}>
           <Route path="/reservation" element={<Reservation />} />

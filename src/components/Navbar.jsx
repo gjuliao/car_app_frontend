@@ -33,11 +33,11 @@ const Navbar = () => {
   };
   useEffect(() => {
     switch (location.pathname) {
-      case '/add-cars':
+      case '/add-car':
         setMenuItems('white-bars');
         break;
       case '/reservation':
-        setMenuItems('white-bars');
+        setMenuItems('');
         break;
       default:
         setMenuItems('');

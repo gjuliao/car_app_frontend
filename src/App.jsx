@@ -5,6 +5,7 @@ import Navbar from './components/Navbar';
 import SecureRoute from './components/SecureRoute';
 import Reservation from './components/Reservation';
 import MyReservation from './components/MyReservation';
+import Main from './components/Main';
 
 // pages
 import AddCar from './pages/AddCar';
@@ -19,6 +20,7 @@ const App = () => (
     <Navbar />
     <div className="content">
       <Routes>
+        <Route path="/" element={<Main />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Registration />} />
         <Route path="/cars" element={<Car />} />

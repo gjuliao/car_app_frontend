@@ -41,5 +41,14 @@
 
 .carSocial {
   display: flex;
-  margin-top: 20%;
+  padding-top: 20%;
+  justify-content: space-around;
+
+}
+
+.carIcons {
+  width: 10%;
+  padding: 3%;
+  border-radius: 100%;
+  border: 1px solid gray;
 }

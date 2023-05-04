@@ -42,9 +42,9 @@ const handleLogout = () => {
     <>
       <div className="sidebar">
         <nav className={navbar.nav}>
-          <div role="presentation" className={`${navbar.menuIcon} ${isOpen ? navbar.open : ''}`} onClick={toggleMenu}>
-            <div id={`${isOpen ? '' : menuItems}`} className={`${isOpen ? navbar.menuIconCross : navbar.menuIconLines} ${isOpen ? navbar.firstBar : ''}`} />
-            <div id={`${isOpen ? '' : menuItems}`} className={`${isOpen ? navbar.menuIconCross : navbar.menuIconLines} ${isOpen ? navbar.secondBar : ''}`} />
+          <div role="presentation" className={`${navbar.menu__bars} ${isOpen ? navbar.open : ''}`} onClick={toggleMenu}>
+            <div id={`${isOpen ? '' : menuItems}`} className={`${isOpen ? navbar.menu__close : navbar.menu__lines} ${isOpen ? navbar.menubar__firstLine : ''}`} />
+            <div id={`${isOpen ? '' : menuItems}`} className={`${isOpen ? navbar.menu__close : navbar.menu__lines} ${isOpen ? navbar.menubar__secondLine : ''}`} />
           </div>
           <div className={`${navbar.menuItems} ${isOpen ? navbar.open : ''}`}>
             <img src={logo} alt="Logo" className={navbar.logo} />

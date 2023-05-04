@@ -1,15 +1,17 @@
 import React from 'react';
 import bmw from '../assets/images/bmw.png';
+import styles from '../styles/Main.module.css';
 
 const Main = () => (
-  <div>
-    <div>
+  <div className={styles.main}>
+    <div className={styles.carLatest}>
       <h1>Latest Models</h1>
       <h6>Please select a car model</h6>
     </div>
-    <div>
-      <div></div>
-      <img src={bmw} alt="bmw-car" />
+    <div className={styles.carCard}>
+      <div className={styles.carBack}>
+        <img className={styles.car} src={bmw} alt="bmw-car" />
+      </div>
     </div>
     <div>
       <h4>BMW 946</h4>

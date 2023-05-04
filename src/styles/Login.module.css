@@ -1,5 +1,7 @@
 .onTopContainer {
-    background-color: #B0EACD;
+    /*background-color: #B0EACD;*/
+    background-image: url(../assets/images/route_bg_1.jpg);
+    background-size: cover;
     height: 100vh;
     width: 100vw;
     position: absolute;
@@ -22,11 +24,6 @@
     height: 100vh;
 }
 
-.formArea h1 {
-    font-size: 16px;
-    text-align: start;
-}
-
 .formArea form {
     display: flex;
     flex-direction: column;
@@ -35,6 +32,16 @@
     width: 90%;
     padding: 50px 20px;
     border-radius: 10px;
+}
+
+.formArea img {
+    max-width: 209px;
+    margin: auto;
+}
+
+.formArea p {
+    font-size: 16px;
+    text-align: start;
 }
 
 .formArea input {
@@ -54,4 +61,9 @@
     margin-top: 15px;
     background-color: #21BF73;
     color: white;
+}
+
+.formArea a {
+    text-decoration: none;
+    color: gray;
 }

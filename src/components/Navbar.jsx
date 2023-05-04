@@ -1,13 +1,13 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
 // icons
-import {FaFacebookF, FaVimeoV, FaPinterestP } from 'react-icons/fa'
-import { AiOutlineTwitter } from 'react-icons/ai'
-import {TiSocialGooglePlus} from 'react-icons/ti'
+import { FaFacebookF, FaVimeoV, FaPinterestP } from 'react-icons/fa';
+import { AiOutlineTwitter } from 'react-icons/ai';
+import { TiSocialGooglePlus } from 'react-icons/ti';
 // assets
-import navbar from '../styles/Navbar.module.css'
-import logo from '../assets/images/logo.png'
-import { getCurrentDate } from '../common/utils';
+import navbar from '../styles/Navbar.module.css';
+import logo from '../assets/images/logo.png';
+import getCurrentDate from '../common/utils';
 
 const handleActive = ({ isActive }) => (isActive
   ? {
@@ -28,9 +28,9 @@ const Navbar = () => {
   const toggleMenu = useCallback(() => {
     setIsOpen(!isOpen);
   }, [isOpen]);
-const handleLogout = () => {
-  
-}
+  const handleLogout = () => {
+
+  };
   useEffect(() => {
     switch (location.pathname) {
       case '/add-cars':
@@ -73,23 +73,26 @@ const handleLogout = () => {
             <NavLink to="/" style={handleActive} className={navbar.link} onClick={handleLogout}>
               Log out
             </NavLink>
-          <div className={navbar.nav__footer}>
-            <div className={navbar.social__icons}>
-            <AiOutlineTwitter/>
-            <FaFacebookF/>
-            <TiSocialGooglePlus />
-            <FaVimeoV />
-            <FaPinterestP/>
+            <div className={navbar.nav__footer}>
+              <div className={navbar.social__icons}>
+                <AiOutlineTwitter />
+                <FaFacebookF />
+                <TiSocialGooglePlus />
+                <FaVimeoV />
+                <FaPinterestP />
+              </div>
+              <div className={navbar.copyright}>
+                &copy;
+                {getCurrentDate()}
+                {' '}
+                & Car Reservation
+              </div>
             </div>
-            <div className={navbar.copyright}>
-            &copy;{getCurrentDate()} & Car Reservation
-            </div>
-          </div>
           </div>
         </nav>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

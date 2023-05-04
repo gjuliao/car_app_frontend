@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-const AddCar = () => {
-  return (
-    <div>AddCar</div>
-  )
-}
+const AddCar = () => (
+  <div>AddCar</div>
+);
 
-export default AddCar
+export default AddCar;

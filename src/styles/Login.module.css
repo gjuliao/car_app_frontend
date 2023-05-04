@@ -1,70 +1,74 @@
 .onTopContainer {
-    /*background-color: #B0EACD;*/
-    background-image: url(../assets/images/route_bg_1.jpg);
-    background-size: cover;
-    height: 100vh;
-    width: 100vw;
-    position: absolute;
-    left: 0;
-    z-index: 10;
+  /* background-color: #B0EACD; */
+  background-image: url(../assets/images/route_bg_1.jpg);
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  left: 0;
+  z-index: 10;
 }
 
 .container {
-    display: grid;
-    grid-template-columns: 1fr;
+  display: grid;
+  grid-template-columns: 1fr;
 }
 
 .imageArea {
-    display: none;
+  display: none;
 }
 
 .formArea {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 .formArea form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    background-color: white;
-    width: 90%;
-    padding: 50px 20px;
-    border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: white;
+  width: 90%;
+  padding: 50px 20px;
+  border-radius: 10px;
 }
 
 .formArea img {
-    max-width: 209px;
-    margin: auto;
+  max-width: 209px;
+  margin: auto;
 }
 
 .formArea p {
-    font-size: 16px;
-    text-align: start;
+  font-size: 16px;
+  text-align: start;
 }
 
 .formArea input {
-    height: 40px;
-    width: 100%;
-    border: 0;
-    border-radius: 5px;
-    background-color: #efefef;
-    padding: 0 10px;
+  height: 40px;
+  width: 100%;
+  border: 0;
+  border-radius: 5px;
+  background-color: #efefef;
+  padding: 0 10px;
 }
 
 .formArea button {
-    height: 40px;
-    width: 100%;
-    border: 0;
-    border-radius: 5px;
-    margin-top: 15px;
-    background-color: #21BF73;
-    color: white;
+  height: 40px;
+  width: 100%;
+  border: 0;
+  border-radius: 5px;
+  margin-top: 15px;
+  background-color: #21bf73;
+  color: white;
+}
+
+.formArea button:disabled {
+  background-color: lightgray;
 }
 
 .formArea a {
-    text-decoration: none;
-    color: gray;
+  text-decoration: none;
+  color: gray;
 }

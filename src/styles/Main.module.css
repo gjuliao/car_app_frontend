@@ -32,3 +32,14 @@
   padding-top: 5%;
   padding-bottom: 15%;
 }
+
+.carDescription {
+  margin-top: 60%;
+  padding-left: 10%;
+  margin-bottom: 20%;
+}
+
+.carSocial {
+  display: flex;
+  margin-top: 20%;
+}

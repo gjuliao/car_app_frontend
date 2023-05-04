@@ -1,4 +1,5 @@
 import React from 'react';
+import bmw from '../assets/images/bmw.png';
 
 const Main = () => (
   <div>
@@ -8,7 +9,7 @@ const Main = () => (
     </div>
     <div>
       <div></div>
-      <img src="" alt="" />
+      <img src={bmw} alt="bmw-car" />
     </div>
     <div>
       <h4>BMW 946</h4>

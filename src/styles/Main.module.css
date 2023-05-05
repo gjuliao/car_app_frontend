@@ -69,6 +69,7 @@
 
   .carLatest {
     margin: auto;
+    padding-left: 0;
   }
 
   .carLatest h6 {

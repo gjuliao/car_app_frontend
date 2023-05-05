@@ -24,9 +24,9 @@ const Login = () => {
     let lengthValid = false;
     let emailFormatValid = false;
     if (formData.email?.length > 0 && formData.password?.length > 0) lengthValid = true;
-    if (formData.email?.match(validRegex)) emailFormatValid = true
+    if (formData.email?.match(validRegex)) emailFormatValid = true;
 
-    if(lengthValid && emailFormatValid){
+    if (lengthValid && emailFormatValid) {
       setIsFormValid(true);
     } else {
       setIsFormValid(false);

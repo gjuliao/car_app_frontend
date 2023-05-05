@@ -1,7 +1,10 @@
 import React from 'react';
+import ReserveCarForm from './Forms/ReserveCarForm';
 
 const Reservation = () => (
-  <div>Reservation</div>
+  <>
+    <ReserveCarForm />
+  </>
 );
 
 export default Reservation;

@@ -1,12 +1,11 @@
-import React from 'react'
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import formStyle from '../../styles/ReserveCardForm.module.css'
+import formStyle from '../../styles/ReserveCardForm.module.css';
 
 const cars = [
   {
     id: 1,
-    name: 'BMW-96'
+    name: 'BMW-96',
   },
   {
     id: 2,
@@ -14,16 +13,16 @@ const cars = [
   },
   {
     id: 3,
-    name: 'Hilux'
+    name: 'Hilux',
   },
   {
     id: 4,
-    name: 'Revolution'
-  }
-]
+    name: 'Revolution',
+  },
+];
 const ReserveCarForm = () => {
   const params = useParams();
-  
+
   const [formData, setFormData] = useState({
     carId: params.id || '',
     startDate: '',
@@ -33,31 +32,31 @@ const ReserveCarForm = () => {
   const handleInput = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-  }
+  };
 
   useEffect(() => {
 
-  }, [])
+  }, []);
 
   const handleSubmit = (event) => {
     event.preventDefault();
-  }
+  };
 
   return (
     <form onSubmit={handleSubmit} className={formStyle.formContainer}>
       <div className={formStyle.car__background} />
       <h1 className={formStyle.header}>Reserve Cars </h1>
       <p className={formStyle.description}>
-      Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-       Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s,
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+        Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s,
         when an unknown printer took a galley of type and scrambled it to make a type
-         specimen book.
+        specimen book.
       </p>
-      
+
       <div className={formStyle.inputsContainer}>
 
         <div className={formStyle.reservation__field}>
-        <select
+          <select
             id="carId"
             name="carId"
             value={formData.carId}
@@ -112,6 +111,6 @@ const ReserveCarForm = () => {
       </div>
     </form>
   );
-}
+};
 
-export default ReserveCarForm
+export default ReserveCarForm;

@@ -3,7 +3,6 @@ import { Routes, Route } from 'react-router-dom';
 // components
 import Navbar from './components/Navbar';
 import SecureRoute from './components/SecureRoute';
-import Reservation from './components/Reservation';
 import MyReservation from './components/MyReservation';
 import Main from './components/Main';
 
@@ -11,6 +10,8 @@ import Main from './components/Main';
 import AddCar from './pages/AddCar';
 import Login from './pages/Login';
 import DeleteCar from './pages/DeleteCar';
+import ReservationPage from './pages/ReservationPage';
+
 import Car from './pages/Car';
 import './App.css';
 import Registration from './pages/Registration';
@@ -25,8 +26,8 @@ const App = () => (
         <Route path="/register" element={<Registration />} />
         <Route path="/cars" element={<Car />} />
         <Route element={<SecureRoute />}>
-          <Route path="/reservation" element={<Reservation />} />
-          <Route path="/reservation/:id" element={<Reservation />} />
+          <Route path="/reservation" element={<ReservationPage />} />
+          <Route path="/reservation/:id" element={<ReservationPage />} />
           <Route path="/my-reservation" element={<MyReservation />} />
           <Route path="/add-car" element={<AddCar />} />
           <Route path="/delete-car" element={<DeleteCar />} />

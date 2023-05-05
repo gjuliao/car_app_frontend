@@ -67,7 +67,7 @@
   margin-bottom: 5vh;
 }
 
-.reservation__field input[type="date"], 
+.reservation__field input[type="date"],
 .reservation__field input[type="text"],
 .reservation__field > select {
   height: 2.1875rem;
@@ -82,7 +82,7 @@
   -ms-border-radius: 0.625rem;
   -o-border-radius: 0.625rem;
 }
- 
+
 .reservation__field input[type="date"],
 .reservation__field input[type="text"] {
   width: 40vw;
@@ -142,9 +142,10 @@ input::placeholder {
     border-radius: 0;
     background-size: contain;
   }
+
   .car__background {
     left: 20vw;
-    width: auto; 
+    width: auto;
     height: 100vh;
     scale: 2;
     background-size: cover;
@@ -159,7 +160,7 @@ input::placeholder {
   .form__label {
     width: fit-content;
   }
-  
+
   .header {
     font-size: 1.875rem;
   }

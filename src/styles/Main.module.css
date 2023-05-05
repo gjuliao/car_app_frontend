@@ -16,6 +16,8 @@
   height: 10rem;
   margin-top: 25%;
   margin-bottom: 25%;
+  padding-top: 5%;
+  padding-bottom: 20%;
 }
 
 .car {
@@ -59,10 +61,40 @@
 /* Styles for medium screens and larger */
 @media screen and (min-width: 768px) {
   .main {
-    width: 70%;
+    width: 60%;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    margin: auto;
+    padding-left: 20%;
   }
+
+  .carList {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 8%;
+  }
+
+  .carCard {
+    margin: 0;
+    padding: 0;
+  }
+
+  .car {
+    width: 120%;
+  }
+
+  .carBack {
+    height: 60px;
+    width: 120px;
+    margin-left: 12%;
+    padding-top: 5%;
+    padding-bottom: 30%;
+  }
+
+  .carDescription {
+    margin: 0;
+  }
+
+
 }
 

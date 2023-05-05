@@ -16,7 +16,7 @@ const Registration = () => {
   };
 
   const sendForm = () => {
-    console.log(isFormValid);
+    console.log('in development...');
   };
 
   useEffect(() => {
@@ -24,9 +24,13 @@ const Registration = () => {
     let lengthValid = false;
     let emailFormatValid = false;
     let passwordsMatch = false;
-    if ( formData.name?.length > 0 && formData.email?.length > 0 && formData.password?.length > 0) lengthValid = true;
+    if (
+      formData.name?.length > 0
+      && formData.email?.length > 0
+      && formData.password?.length > 0
+    ) lengthValid = true;
     if (formData.email?.match(validRegex)) emailFormatValid = true;
-    if (formData.password === formData.passwordConf) passwordsMatch = true
+    if (formData.password === formData.passwordConf) passwordsMatch = true;
 
     if (lengthValid && emailFormatValid && passwordsMatch) {
       setIsFormValid(true);

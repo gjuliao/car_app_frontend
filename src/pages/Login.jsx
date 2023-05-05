@@ -16,7 +16,7 @@ const Login = () => {
   };
 
   const sendForm = () => {
-    console.log(isFormValid);
+    console.log('in development...');
   };
 
   useEffect(() => {

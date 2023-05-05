@@ -1,6 +1,7 @@
 import React from 'react';
 import bmw from '../assets/images/bmw.png';
 import styles from '../styles/Main.module.css';
+import Footer from './Footer';
 
 const Main = () => (
   <div className={styles.main}>
@@ -28,6 +29,7 @@ const Main = () => (
         </svg>
       </div>
     </div>
+    <Footer />
   </div>
 );
 

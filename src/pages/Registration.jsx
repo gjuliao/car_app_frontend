@@ -43,7 +43,7 @@ const Registration = () => {
     <section className={styles.onTopContainer}>
       <div className={styles.container}>
         <div className={styles.imageArea}>
-          <img src="" alt="cars" />
+          <div className={styles.welcome}> </div>
         </div>
         <div className={styles.formArea}>
           <form>

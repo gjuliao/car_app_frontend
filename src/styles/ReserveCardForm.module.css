@@ -39,40 +39,42 @@
 }
 
 .car__background {
-  background-image: url('../assets/images/background.jpeg');
-  background-position: center;
   position: absolute;
+  background-image: url('../assets/images/background.jpeg');
   background-repeat: no-repeat;
-  min-height: 100vh;
+  background-position: center;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+  background-size: cover;
+  height: 100vh;
   width: 100vw;
   opacity: 0.4;
   overflow: hidden;
   scale: 1;
   bottom: 0;
   right: 0;
-  background-size: cover;
 }
 
 .reservation__field {
   margin-top: 5vh;
   display: flex;
   flex-direction: column;
-  width: 90%;
+  width: 100%;
 }
 
 .reservation__field:last-of-type {
   margin-bottom: 5vh;
 }
 
-.reservation__field input[type="date"],
-.reservation__field input[type="text"] {
+.reservation__field input[type="date"], 
+.reservation__field input[type="text"],
+.reservation__field > select {
   height: 2.1875rem;
   border-radius: 0.625rem;
   background-color: var(--green);
   border: solid white 1px;
   color: white;
-  width: 40vw;
-  max-width: 21.875rem;
   min-width: 12.5rem;
   padding: 1px 12px;
   -webkit-border-radius: 0.625rem;
@@ -80,21 +82,16 @@
   -ms-border-radius: 0.625rem;
   -o-border-radius: 0.625rem;
 }
-
-.reservation__field select {
-  height: 2.1875rem;
-  border-radius: 0.625rem;
-  background-color: var(--green);
-  border: solid white 1px;
-  color: white;
+ 
+.reservation__field input[type="date"],
+.reservation__field input[type="text"] {
   width: 40vw;
+  max-width: 21.875rem;
+}
+
+.reservation__field > select {
+  width: 100%;
   max-width: 23.125rem;
-  min-width: 12.5rem;
-  padding: 1px 12px;
-  -webkit-border-radius: 0.625rem;
-  -moz-border-radius: 0.625rem;
-  -ms-border-radius: 0.625rem;
-  -o-border-radius: 0.625rem;
 }
 
 input::placeholder {
@@ -119,12 +116,12 @@ input::placeholder {
   font-weight: 700;
   height: 2.8125rem;
   margin-top: 0.375rem;
-  border-radius: 1.125rem;
+  border-radius: 1rem;
   border-style: none;
-  -webkit-border-radius: 1.125rem;
-  -moz-border-radius: 1.125rem;
-  -ms-border-radius: 1.125rem;
-  -o-border-radius: 1.125rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
 }
 
 .formContainer button[type="submit"]:hover {
@@ -147,7 +144,7 @@ input::placeholder {
   }
   .car__background {
     left: 20vw;
-    width: auto;
+    width: auto; 
     height: 100vh;
     scale: 2;
     background-size: cover;
@@ -162,7 +159,7 @@ input::placeholder {
   .form__label {
     width: fit-content;
   }
-
+  
   .header {
     font-size: 1.875rem;
   }

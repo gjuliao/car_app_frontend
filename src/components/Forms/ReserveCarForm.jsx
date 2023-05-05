@@ -46,7 +46,7 @@ const ReserveCarForm = () => {
   return (
     <form onSubmit={handleSubmit} className={formStyle.formContainer}>
       <div className={formStyle.car__background} />
-      <h1 className={formStyle.header}>Reserve our Latest model Cars </h1>
+      <h1 className={formStyle.header}>Reserve Cars </h1>
       <p className={formStyle.description}>
       Lorem Ipsum is simply dummy text of the printing and typesetting industry.
        Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s,
@@ -58,8 +58,8 @@ const ReserveCarForm = () => {
 
         <div className={formStyle.reservation__field}>
         <select
-            id="hotelId"
-            name="hotelId"
+            id="carId"
+            name="carId"
             value={formData.carId}
             onChange={handleInput}
             required

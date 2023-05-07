@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import formStyle from '../../styles/ReserveCardForm.module.css';
-import { addReservation } from '../../redux/reservation/reservationSlice';
+import { addReservation } from '../../redux/reservation/reservationSlice.js';
 
 const cars = [
   {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import formStyle from '../../styles/ReserveCardForm.module.css';
 import { useDispatch, useSelector } from 'react-redux';
+import formStyle from '../../styles/ReserveCardForm.module.css';
 import { addReservation } from '../../redux/reservation/reservationSlice';
 
 const cars = [
@@ -24,10 +24,10 @@ const cars = [
 ];
 const ReserveCarForm = () => {
   const params = useParams();
-  const dispatch = useDispatch()
-  const navigate = useNavigate()
-  const user = useSelector((state) => state.reservation)
-  const {message, error} = useSelector((state) => state.reservations)
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const user = useSelector((state) => state.reservation);
+  const { message, error } = useSelector((state) => state.reservations);
 
   const [formData, setFormData] = useState({
     carId: params.id || '',
@@ -47,15 +47,14 @@ const ReserveCarForm = () => {
     const reservation = {
       car_id: formData.carId,
       start_date: formData.startDate,
-      return_date: formData.endDate
-    }
+      return_date: formData.endDate,
+    };
     const carReservation = {
       reservation,
-      userId: user.id
-    }
-    dispatch(addReservation(carReservation))
+      userId: user.id,
+    };
+    dispatch(addReservation(carReservation));
   };
-
 
   const handleNavigation = () => {
     if (message === 'Car Reserved Successfully') window.location.href = '/my-reservations';
@@ -68,7 +67,7 @@ const ReserveCarForm = () => {
   return (
     <form onSubmit={handleSubmit} className={formStyle.formContainer}>
       <div className={formStyle.car__background} />
-      { !message ? null : <p className={form.success}>{message}</p>}
+      { !message ? null : <p className={formStyle.success}>{message}</p>}
       <h1 className={formStyle.header}>Reserve Cars </h1>
       <p className={formStyle.description}>
         Lorem Ipsum is simply dummy text of the printing and typesetting industry.

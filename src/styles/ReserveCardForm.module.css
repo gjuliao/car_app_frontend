@@ -7,7 +7,7 @@
 .formContainer {
   background-repeat: no-repeat;
   background-position: center;
-  background-color: #95c010;
+  background-color: #7da504;
   height: 100vh;
   color: white;
   display: flex;
@@ -16,6 +16,15 @@
   justify-content: center;
   overflow: hidden;
   position: relative;
+}
+
+.success {
+  background: var(--blue);
+  width: 100vw;
+  color: white;
+  position: absolute;
+  top: 10px;
+  padding: 10px 0;
 }
 
 .form__label {
@@ -49,7 +58,7 @@
   background-size: cover;
   height: 100vh;
   width: 100vw;
-  opacity: 0.4;
+  opacity: 0.2;
   overflow: hidden;
   scale: 1;
   bottom: 0;
@@ -157,6 +166,12 @@ input::placeholder {
     margin-top: 0.625rem;
   }
 
+  .inputsContainer {
+    display: flex;
+    flex-direction: column;
+    row-gap: 6px;
+  }
+  
   .form__label {
     width: fit-content;
   }

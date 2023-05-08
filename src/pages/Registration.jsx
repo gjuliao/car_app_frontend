@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import styles from '../styles/Registration.module.css';
 import logo from '../assets/images/logo.png';
+import { signUp } from '../redux/slices/sessionSlice';
 
 const Registration = () => {
+  const dispatch = useDispatch();
   const [formData, setFormData] = useState({});
   const [isFormValid, setIsFormValid] = useState(false);
 
@@ -15,8 +18,8 @@ const Registration = () => {
     });
   };
 
-  const sendForm = () => {
-    console.log('in development...');
+  const sendForm = async () => {
+    dispatch(signUp(formData));
   };
 
   useEffect(() => {
@@ -30,7 +33,7 @@ const Registration = () => {
       && formData.password?.length > 0
     ) lengthValid = true;
     if (formData.email?.match(validRegex)) emailFormatValid = true;
-    if (formData.password === formData.passwordConf) passwordsMatch = true;
+    if (formData.password === formData.password_confirmation) passwordsMatch = true;
 
     if (lengthValid && emailFormatValid && passwordsMatch) {
       setIsFormValid(true);
@@ -52,7 +55,7 @@ const Registration = () => {
             <input type="text" placeholder="user name" name="name" onChange={changeHandler} />
             <input type="text" placeholder="email" name="email" onChange={changeHandler} />
             <input type="password" placeholder="password" name="password" onChange={changeHandler} />
-            <input type="password" placeholder="confirm password" name="passwordConf" onChange={changeHandler} />
+            <input type="password" placeholder="confirm password" name="password_confirmation" onChange={changeHandler} />
             <button type="button" disabled={!isFormValid} onClick={sendForm}>SIGNUP</button>
             <Link to="/login">Have a user?</Link>
           </form>

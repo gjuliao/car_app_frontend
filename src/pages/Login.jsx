@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import styles from '../styles/Login.module.css';
 import logo from '../assets/images/logo.png';
 import { login } from '../redux/slices/sessionSlice';
 
 const Login = () => {
+  const navigate = useNavigate()
   const dispatch = useDispatch()
   const session = useSelector((store) => store.session)
   const [formData, setFormData] = useState({});
@@ -23,6 +24,12 @@ const Login = () => {
     dispatch(login(formData));
   };
 
+  const redirectIfSuccess = async() => {
+    if(session.data?.user) {
+      navigate('/')
+    }
+  }
+
   useEffect(() => {
     const validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     let lengthValid = false;
@@ -36,6 +43,10 @@ const Login = () => {
       setIsFormValid(false);
     }
   }, [formData]);
+
+  useEffect(() => {
+    redirectIfSuccess()
+  }, [session])
 
   return (
     <section className={styles.onTopContainer}>

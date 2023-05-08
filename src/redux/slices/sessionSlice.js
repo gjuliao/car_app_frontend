@@ -43,7 +43,6 @@ export const login = createAsyncThunk(
     })
 
     const data = await res.json();
-    console.log(data)
     return data;
   }
 )

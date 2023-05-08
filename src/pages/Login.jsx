@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import styles from '../styles/Login.module.css';
 import logo from '../assets/images/logo.png';
+import { login } from '../redux/slices/sessionSlice';
 
 const Login = () => {
+  const dispatch = useDispatch()
   const [formData, setFormData] = useState({});
   const [isFormValid, setIsFormValid] = useState(false);
 
@@ -16,7 +19,7 @@ const Login = () => {
   };
 
   const sendForm = () => {
-    console.log('in development...');
+    dispatch(login(formData));
   };
 
   useEffect(() => {

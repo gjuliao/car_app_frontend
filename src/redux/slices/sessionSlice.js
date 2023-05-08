@@ -4,11 +4,13 @@ const initialState = {
   data: {},
 };
 
+// const { VITE_API_1_URL } = import.meta.env; Global variable to be defined
+const baseUrl = 'http://127.0.0.1:3000/api/v1'
+
 export const signUp = createAsyncThunk(
   'session/signUp',
   async (formData) => {
-    // const { VITE_API_1_URL } = import.meta.env; Global variable to be defined
-    const res = await fetch('http://127.0.0.1:3000/api/v1/signup', {
+    const res = await fetch(`${baseUrl}/signup`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -25,12 +27,36 @@ export const signUp = createAsyncThunk(
   },
 );
 
+export const login = createAsyncThunk(
+  'session/login',
+  async (formData) => {
+    const res = await fetch(`${baseUrl}/login`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        user: {
+          ...formData,
+        },
+      }),
+    })
+
+    const data = await res.json();
+    console.log(data)
+    return data;
+  }
+)
+
 const sessionSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(signUp.fulfilled, (state, action) => {
+      state.data = action.payload;
+    });
+    builder.addCase(login.fulfilled, (state, action) => {
       state.data = action.payload;
     });
   },

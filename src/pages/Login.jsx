@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import styles from '../styles/Login.module.css';
 import logo from '../assets/images/logo.png';
@@ -7,6 +7,7 @@ import { login } from '../redux/slices/sessionSlice';
 
 const Login = () => {
   const dispatch = useDispatch()
+  const session = useSelector((store) => store.session)
   const [formData, setFormData] = useState({});
   const [isFormValid, setIsFormValid] = useState(false);
 
@@ -48,6 +49,7 @@ const Login = () => {
             <p>LOG IN</p>
             <input type="text" placeholder="email" name="email" onChange={changeHandler} />
             <input type="password" placeholder="password" name="password" onChange={changeHandler} />
+            <p className={styles.error} >{session.data.error}</p>
             <button type="button" disabled={!isFormValid} onClick={sendForm}>LOGIN</button>
             <Link to="/register">Create account</Link>
           </form>

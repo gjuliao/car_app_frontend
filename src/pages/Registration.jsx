@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import styles from '../styles/Registration.module.css';
 import logo from '../assets/images/logo.png';
@@ -7,6 +7,7 @@ import { signUp } from '../redux/slices/sessionSlice';
 
 const Registration = () => {
   const dispatch = useDispatch();
+  const session = useSelector((store) => store.session)
   const [formData, setFormData] = useState({});
   const [isFormValid, setIsFormValid] = useState(false);
 
@@ -56,6 +57,7 @@ const Registration = () => {
             <input type="text" placeholder="email" name="email" onChange={changeHandler} />
             <input type="password" placeholder="password" name="password" onChange={changeHandler} />
             <input type="password" placeholder="confirm password" name="password_confirmation" onChange={changeHandler} />
+            <p className={styles.error} >{session.data.error || session.data.message}</p>
             <button type="button" disabled={!isFormValid} onClick={sendForm}>SIGNUP</button>
             <Link to="/login">Have a user?</Link>
           </form>

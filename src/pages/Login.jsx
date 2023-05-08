@@ -6,9 +6,9 @@ import logo from '../assets/images/logo.png';
 import { login } from '../redux/slices/sessionSlice';
 
 const Login = () => {
-  const navigate = useNavigate()
-  const dispatch = useDispatch()
-  const session = useSelector((store) => store.session)
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const session = useSelector((store) => store.session);
   const [formData, setFormData] = useState({});
   const [isFormValid, setIsFormValid] = useState(false);
 
@@ -23,12 +23,6 @@ const Login = () => {
   const sendForm = () => {
     dispatch(login(formData));
   };
-
-  const redirectIfSuccess = async() => {
-    if(session.data?.user) {
-      navigate('/')
-    }
-  }
 
   useEffect(() => {
     const validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
@@ -45,8 +39,10 @@ const Login = () => {
   }, [formData]);
 
   useEffect(() => {
-    redirectIfSuccess()
-  }, [session])
+    if (session.data?.user) {
+      navigate('/');
+    }
+  }, [session, navigate]);
 
   return (
     <section className={styles.onTopContainer}>
@@ -60,7 +56,7 @@ const Login = () => {
             <p>LOG IN</p>
             <input type="text" placeholder="email" name="email" onChange={changeHandler} />
             <input type="password" placeholder="password" name="password" onChange={changeHandler} />
-            <p className={styles.error} >{session.data.error}</p>
+            <p className={styles.error}>{session.data.error}</p>
             <button type="button" disabled={!isFormValid} onClick={sendForm}>LOGIN</button>
             <Link to="/register">Create account</Link>
           </form>

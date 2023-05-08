@@ -1,6 +1,7 @@
 import React from 'react';
 import CarCard from './CarCard';
 import styles from '../styles/Main.module.css';
+import Footer from './Footer';
 
 const Main = () => (
   <div className={styles.main}>
@@ -13,6 +14,7 @@ const Main = () => (
       <CarCard />
       <CarCard />
     </div>
+    <Footer />
   </div>
 );
 

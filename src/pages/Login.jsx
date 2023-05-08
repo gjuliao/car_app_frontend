@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import styles from '../styles/Login.module.css';
 import logo from '../assets/images/logo.png';
-import { login } from '../redux/slices/sessionSlice';
+import { login } from '../redux/sessionSlice';
 
 const Login = () => {
   const navigate = useNavigate();

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import styles from '../styles/Registration.module.css';
 import logo from '../assets/images/logo.png';
-import { signUp } from '../redux/slices/sessionSlice';
+import { signUp } from '../redux/sessionSlice';
 
 const Registration = () => {
   const dispatch = useDispatch();

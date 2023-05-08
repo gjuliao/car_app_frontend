@@ -110,7 +110,7 @@ Desktop view
     height: 630px;
     border-radius: 10px 0 0 10px;
     background-image: url('../assets//images/car_top_1.png');
-    background-size:contain;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
   }

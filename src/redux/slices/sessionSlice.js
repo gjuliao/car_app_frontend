@@ -5,7 +5,7 @@ const initialState = {
 };
 
 // const { VITE_API_1_URL } = import.meta.env; Global variable to be defined
-const baseUrl = 'http://127.0.0.1:3000/api/v1'
+const baseUrl = 'http://127.0.0.1:3000/api/v1';
 
 export const signUp = createAsyncThunk(
   'session/signUp',
@@ -40,12 +40,12 @@ export const login = createAsyncThunk(
           ...formData,
         },
       }),
-    })
+    });
 
     const data = await res.json();
     return data;
-  }
-)
+  },
+);
 
 const sessionSlice = createSlice({
   name: 'user',

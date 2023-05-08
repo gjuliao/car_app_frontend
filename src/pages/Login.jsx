@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
 import styles from '../styles/Login.module.css';
 import logo from '../assets/images/logo.png';
+import { login } from '../redux/sessionSlice';
 
 const Login = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const session = useSelector((store) => store.session);
   const [formData, setFormData] = useState({});
   const [isFormValid, setIsFormValid] = useState(false);
 
@@ -16,7 +21,7 @@ const Login = () => {
   };
 
   const sendForm = () => {
-    console.log('in development...');
+    dispatch(login(formData));
   };
 
   useEffect(() => {
@@ -33,11 +38,17 @@ const Login = () => {
     }
   }, [formData]);
 
+  useEffect(() => {
+    if (session.data?.user) {
+      navigate('/');
+    }
+  }, [session, navigate]);
+
   return (
     <section className={styles.onTopContainer}>
       <div className={styles.container}>
         <div className={styles.imageArea}>
-          <img src="" alt="cars" />
+          <div className={styles.welcome}> </div>
         </div>
         <div className={styles.formArea}>
           <form>
@@ -45,6 +56,7 @@ const Login = () => {
             <p>LOG IN</p>
             <input type="text" placeholder="email" name="email" onChange={changeHandler} />
             <input type="password" placeholder="password" name="password" onChange={changeHandler} />
+            <p className={styles.error}>{session.data.error}</p>
             <button type="button" disabled={!isFormValid} onClick={sendForm}>LOGIN</button>
             <Link to="/register">Create account</Link>
           </form>

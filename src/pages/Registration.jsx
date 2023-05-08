@@ -1,9 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { Link, useNavigate } from 'react-router-dom';
 import styles from '../styles/Registration.module.css';
 import logo from '../assets/images/logo.png';
+import { signUp } from '../redux/sessionSlice';
 
 const Registration = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const session = useSelector((store) => store.session);
   const [formData, setFormData] = useState({});
   const [isFormValid, setIsFormValid] = useState(false);
 
@@ -15,8 +20,8 @@ const Registration = () => {
     });
   };
 
-  const sendForm = () => {
-    console.log('in development...');
+  const sendForm = async () => {
+    dispatch(signUp(formData));
   };
 
   useEffect(() => {
@@ -30,7 +35,7 @@ const Registration = () => {
       && formData.password?.length > 0
     ) lengthValid = true;
     if (formData.email?.match(validRegex)) emailFormatValid = true;
-    if (formData.password === formData.passwordConf) passwordsMatch = true;
+    if (formData.password === formData.password_confirmation) passwordsMatch = true;
 
     if (lengthValid && emailFormatValid && passwordsMatch) {
       setIsFormValid(true);
@@ -39,11 +44,17 @@ const Registration = () => {
     }
   }, [formData]);
 
+  useEffect(() => {
+    if (session.data?.user) {
+      navigate('/');
+    }
+  }, [session, navigate]);
+
   return (
     <section className={styles.onTopContainer}>
       <div className={styles.container}>
         <div className={styles.imageArea}>
-          <img src="" alt="cars" />
+          <div className={styles.welcome}> </div>
         </div>
         <div className={styles.formArea}>
           <form>
@@ -52,7 +63,8 @@ const Registration = () => {
             <input type="text" placeholder="user name" name="name" onChange={changeHandler} />
             <input type="text" placeholder="email" name="email" onChange={changeHandler} />
             <input type="password" placeholder="password" name="password" onChange={changeHandler} />
-            <input type="password" placeholder="confirm password" name="passwordConf" onChange={changeHandler} />
+            <input type="password" placeholder="confirm password" name="password_confirmation" onChange={changeHandler} />
+            <p className={styles.error}>{session.data.error || session.data.message}</p>
             <button type="button" disabled={!isFormValid} onClick={sendForm}>SIGNUP</button>
             <Link to="/login">Have a user?</Link>
           </form>

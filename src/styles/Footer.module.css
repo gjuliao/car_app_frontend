@@ -4,12 +4,27 @@
     text-align: center;
     bottom: 0;
     width: 100%;
-    padding: 10px;
+    margin-left: 25%;
+    width: 80%;
+  }
+
+  .footerList {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
   }
   
   @media only screen and (max-width: 600px) {
     .footer {
       position: relative;
-      width: 120%;
+      width: 100%;
+      margin-left: 5%;
+    }
+
+    .footerList {
+      display: flex;
+      margin: auto;
+      flex-direction: column;
+      width: 80%;
     }
   }

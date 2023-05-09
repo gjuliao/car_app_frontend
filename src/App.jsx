@@ -11,6 +11,7 @@ import AddCar from './pages/AddCar';
 import Login from './pages/Login';
 import DeleteCar from './pages/DeleteCar';
 import ReservationPage from './pages/ReservationPage';
+import CarDetail from './pages/CarDetail';
 
 import Car from './pages/Car';
 import './App.css';
@@ -25,6 +26,7 @@ const App = () => (
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Registration />} />
         <Route path="/cars" element={<Car />} />
+        <Route path="/cars/:id" element={<CarDetail />} />
         <Route element={<SecureRoute />}>
           <Route path="/reservation" element={<ReservationPage />} />
           <Route path="/reservation/:id" element={<ReservationPage />} />

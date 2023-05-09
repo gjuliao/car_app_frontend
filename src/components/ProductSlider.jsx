@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode } from 'swiper';
 import 'swiper/css';
@@ -6,6 +7,10 @@ import CarCard from './CarCard';
 import styles from '../styles/Main.module.css';
 
 function ProductSlider() {
+
+  const cars = useSelector((state) => state.cars);
+  console.log(cars);
+
   return (
     <div className={styles.productSlider}>
       <Swiper

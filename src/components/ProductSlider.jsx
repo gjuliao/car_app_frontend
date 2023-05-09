@@ -2,6 +2,7 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode } from 'swiper';
 import 'swiper/css';
+import 'swiper/css/bundle';
 import CarCard from './CarCard';
 import styles from '../styles/Main.module.css';
 
@@ -13,16 +14,42 @@ function ProductSlider() {
         grabCursor={true}
         modules={[FreeMode]}
         className="mySwiper"
-        slidesPerView={5}
-        spaceBetween={180}
+        breakpoints={{
+          0: {
+            slidesPerView: 1,
+            spaceBetween: 15,
+          },
+          480: {
+            slidesPerView: 2,
+            spaceBetween: 15,
+          },
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 150,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 150,
+          },
+          1280: {
+            slidesPerView: 3,
+            spaceBetween: 150,
+          },
+        }}
       >
-        <SwiperSlide className={styles.productslide}>
+        <SwiperSlide>
           <CarCard />
         </SwiperSlide>
-        <SwiperSlide className={styles.productslide}>
+        <SwiperSlide>
           <CarCard />
         </SwiperSlide>
-        <SwiperSlide className={styles.productslide}>
+        <SwiperSlide>
+          <CarCard />
+        </SwiperSlide>
+        <SwiperSlide>
+          <CarCard />
+        </SwiperSlide>
+        <SwiperSlide>
           <CarCard />
         </SwiperSlide>
         <SwiperSlide>

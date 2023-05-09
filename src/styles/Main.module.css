@@ -1,8 +1,6 @@
 .main {
-  width: 75%;
   height: 80vh;
   padding-left: 6%;
-  margin: auto;
 }
 
 .carLatest {
@@ -62,33 +60,31 @@
   .main {
     display: flex;
     flex-direction: column;
-    margin: auto;
-    padding-left: 8%;
+    margin-right: 1% !important;
+    margin-left: 3.5%;
+    max-width: 850px;
   }
 
   .carLatest {
     margin-top: 5%;
     padding-left: 0;
-    margin-bottom: 15%;
+    margin-bottom: 8%;
   }
 
   .carLatest h6 {
     margin-top: 0%;
     border-bottom: 1px solid lightgray;
-    padding-bottom: 10%;
     width: 90%;
     color: lightgray;
   }
 
   .productSlider {
     height: 40vh;
-    width: 80%;
-    margin: auto;
-    margin-left: 10%;
+    width: 100%;
   }
 
   .productslide {
-    margin-right: 250px !important;
+    margin-right: 50px !important;
   }
 
   .carCard {

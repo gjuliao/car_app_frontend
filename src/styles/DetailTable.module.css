@@ -1,0 +1,28 @@
+.detailTable {
+  width: 100%;
+  margin: auto;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.detailTable tr {
+  height: 30px;
+  background-color: #e2e3e5;
+}
+
+.detailTable tr:nth-child(2n) {
+  background-color: white;
+}
+
+.keyRow {
+  width: 60%;
+  text-align: start;
+  font-weight: 600;
+  padding-left: 20px;
+}
+
+.valueRow {
+  width: 40%;
+  text-align: end;
+  padding-right: 20px;
+}

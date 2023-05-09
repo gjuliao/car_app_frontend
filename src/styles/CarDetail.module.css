@@ -1,25 +1,25 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 100vh;
-    padding: 70px 10% 20px 10%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100vh;
+  padding: 70px 10% 20px 10%;
 }
 
 .photo {
-    width: 80%;
+  width: 80%;
 }
 
 .title {
-    text-align: right;
-    font-size: 1.6rem;
+  text-align: right;
+  font-size: 1.6rem;
 }
 
 .subtitle {
-    text-align: right;
-    margin-bottom: 10px;
-    font-size: 0.7rem;
-    font-weight: 600;
+  text-align: right;
+  margin-bottom: 10px;
+  font-size: 0.7rem;
+  font-weight: 600;
 }
 
 .reserveBtn {
@@ -34,10 +34,10 @@
 }
 
 .errorContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.2rem;
 }

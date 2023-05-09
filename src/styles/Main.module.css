@@ -1,30 +1,19 @@
 .main {
-  width: 80%;
+  width: 75%;
+  height: 80vh;
+  padding-left: 6%;
+  margin: auto;
 }
 
 .carLatest {
-  margin: auto;
-  padding-left: 25%;
-}
-
-.carLatest h6 {
-  margin-top: 10%;
-}
-
-.carList {
-  display: flex;
-  justify-content: space-around;
-  padding-top: 8%;
-  flex-direction: column;
-  margin: auto;
-  align-content: center;
-  text-align: center;
+  margin-top: 0;
   margin-bottom: 10%;
+  margin: auto;
 }
 
 .carCard {
-  width: 20rem;
-  height: 25rem;
+  width: 60rem;
+  height: 65rem;
   margin-top: 25%;
   margin-bottom: 25%;
   padding-top: 5%;
@@ -38,6 +27,7 @@
   z-index: 2;
   left: 3%;
   margin-left: -15%;
+  height: 15vh;
 }
 
 .carBack {
@@ -51,14 +41,12 @@
 }
 
 .carDescription {
-  margin-top: 20%;
   padding-left: 10%;
   margin-bottom: 20%;
 }
 
 .carSocial {
   display: flex;
-  padding-top: 20%;
   justify-content: space-around;
 }
 
@@ -79,27 +67,28 @@
   }
 
   .carLatest {
-    margin: auto;
+    margin-top: 5%;
     padding-left: 0;
+    margin-bottom: 15%;
   }
 
   .carLatest h6 {
     margin-top: 0%;
     border-bottom: 1px solid lightgray;
-    padding-bottom: 20%;
+    padding-bottom: 10%;
     width: 90%;
     color: lightgray;
   }
 
-  .carList {
-    display: flex;
-    justify-content: space-around;
-    flex-direction: row;
+  .productSlider {
+    height: 40vh;
+    width: 80%;
+    margin: auto;
   }
 
   .carCard {
     width: 16rem;
-    height: 10rem;
+    height: 22rem;
     margin: 0;
     padding: 0;
   }
@@ -121,12 +110,13 @@
   }
 
   .carDescription h4 {
-    margin-top: 20%;
-    margin-bottom: 8%;
+    margin-top: 25%;
+    margin-bottom: 10%;
   }
 
   .carDescription h6 {
     color: lightgray;
+    margin-bottom: 10%;
   }
 
   .carSocial {

@@ -2,7 +2,6 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode } from 'swiper';
 import 'swiper/css';
-import 'swiper/css/bundle';
 import CarCard from './CarCard';
 import styles from '../styles/Main.module.css';
 
@@ -17,14 +16,14 @@ function ProductSlider() {
         breakpoints={{
           0: {
             slidesPerView: 1,
-            spaceBetween: 15,
+            spaceBetween: 150,
           },
           480: {
-            slidesPerView: 2,
-            spaceBetween: 15,
+            slidesPerView: 1,
+            spaceBetween: 150,
           },
           768: {
-            slidesPerView: 3,
+            slidesPerView: 1,
             spaceBetween: 150,
           },
           1024: {

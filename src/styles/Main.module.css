@@ -101,7 +101,7 @@
 
   .carCard {
     width: 20rem;
-    height: 32rem;
+    height: 20rem;
     margin: 0;
     padding: 0;
   }
@@ -121,22 +121,24 @@
   .carDescription {
     margin: 0;
     padding-left: 0;
+    height: 20vh;
   }
 
   .carDescription h4 {
-    margin-top: 25%;
-    margin-bottom: 10%;
+    margin-top: 5%;
+    margin-bottom: 5%;
   }
 
   .carDescription h6 {
     color: lightgray;
-    margin-bottom: 10%;
+    margin-bottom: 5%;
   }
 
   .carSocial {
     width: 60%;
     margin: auto;
     color: lightgray;
+    padding-bottom: 5%;
   }
 
   .carIcons {

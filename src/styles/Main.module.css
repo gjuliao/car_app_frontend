@@ -84,6 +84,11 @@
     height: 40vh;
     width: 80%;
     margin: auto;
+    margin-left: 10%;
+  }
+
+  .productslide {
+    margin-right: 250px !important;
   }
 
   .carCard {

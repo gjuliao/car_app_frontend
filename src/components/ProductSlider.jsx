@@ -16,13 +16,13 @@ function ProductSlider() {
         slidesPerView={5}
         spaceBetween={180}
       >
-        <SwiperSlide>
+        <SwiperSlide className={styles.productslide}>
           <CarCard />
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className={styles.productslide}>
           <CarCard />
         </SwiperSlide>
-        <SwiperSlide>
+        <SwiperSlide className={styles.productslide}>
           <CarCard />
         </SwiperSlide>
         <SwiperSlide>

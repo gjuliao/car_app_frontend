@@ -9,8 +9,8 @@ function ProductSlider() {
   return (
     <div className={styles.productSlider}>
       <Swiper
-        freeMode={true}
-        grabCursor={true}
+        freeMode
+        grabCursor
         modules={[FreeMode]}
         className="mySwiper"
         breakpoints={{

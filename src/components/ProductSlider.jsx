@@ -28,11 +28,11 @@ function ProductSlider() {
           },
           1024: {
             slidesPerView: 3,
-            spaceBetween: 150,
+            spaceBetween: 250,
           },
           1280: {
             slidesPerView: 3,
-            spaceBetween: 150,
+            spaceBetween: 300,
           },
         }}
       >

@@ -78,7 +78,7 @@
   .carLatest {
     margin-top: 5%;
     padding-left: 0;
-    margin-bottom: 8%;
+    margin-bottom: 0;
   }
 
   .carLatest h6 {
@@ -91,6 +91,7 @@
   .productSlider {
     height: 40vh;
     width: 100%;
+    margin-top: 10%;
   }
 
   .productslide {
@@ -98,19 +99,20 @@
   }
 
   .carCard {
-    width: 16rem;
-    height: 22rem;
+    width: 20rem;
+    height: 32rem;
     margin: 0;
     padding: 0;
   }
 
   .car {
     width: 120%;
+    height: 140%;
   }
 
   .carBack {
-    height: 60px;
-    width: 120px;
+    height: 140px;
+    width: 210px;
     padding-top: 0;
     margin: auto;
   }

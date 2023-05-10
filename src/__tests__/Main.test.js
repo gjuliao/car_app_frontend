@@ -1,3 +1,6 @@
+/* eslint-disable react/display-name */
+/* eslint-disable global-require */
+/* eslint-disable import/no-extraneous-dependencies */
 import React from 'react';
 import { render } from '@testing-library/react';
 import '@testing-library/jest-dom';

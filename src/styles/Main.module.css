@@ -144,4 +144,16 @@
   .carIcons {
     border: 1px solid lightgray;
   }
+
+  .btnNext {
+    background-color: blue;
+    position: fixed;
+    margin-right: 5%;
+  }
+
+  .btnPrev {
+    background-color: yellow;
+    position: fixed;
+    margin-right: -5%;
+  }
 }

@@ -3,7 +3,9 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 const carlistEndPoint = 'http://127.0.0.1:3000/api/v1/cars/';
 
 const initialState = {
-  carlist: [],
+  list: {
+    payload: [],
+  },
   status: 'idle',
   message: '',
   error: '',
@@ -12,7 +14,6 @@ const initialState = {
 const GET_CARS = 'GET_CARS';
 
 export const fetchCars = createAsyncThunk(GET_CARS, async () => {
-    console.log(localStorage.getItem('jti'));
   const response = await fetch(carlistEndPoint, {
     method: 'GET',
     headers: {

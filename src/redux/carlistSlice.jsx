@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-const carlistEndPoint = 'http://localhost:3000/api/v1/cars';
+const carlistEndPoint = 'http://127.0.0.1:3000/api/v1/cars/';
 
 const initialState = {
   carlist: [],
@@ -12,11 +12,12 @@ const initialState = {
 const GET_CARS = 'GET_CARS';
 
 export const fetchCars = createAsyncThunk(GET_CARS, async () => {
+    console.log(localStorage.getItem('jti'));
   const response = await fetch(carlistEndPoint, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: localStorage.getItem('token'),
+      Authorization: localStorage.getItem('jti'),
     },
   });
   const data = await response.json();

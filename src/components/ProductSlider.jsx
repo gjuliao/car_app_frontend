@@ -1,14 +1,21 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { FreeMode } from 'swiper';
 import 'swiper/css';
 import CarCard from './CarCard';
 import styles from '../styles/Main.module.css';
+import { fetchCars } from '../redux/carlistSlice';
 
 function ProductSlider() {
 
+  const dispatch = useDispatch();
   const cars = useSelector((state) => state.cars);
+
+  useEffect(() => {
+    dispatch(fetchCars());
+  }, []);
+  
   console.log(cars);
 
   return (

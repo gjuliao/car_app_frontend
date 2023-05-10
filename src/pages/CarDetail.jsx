@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { getCar } from '../redux/carDetail/carDetailSlice';
 import DetailTable from '../components/DetailTable';
 import styles from '../styles/CarDetail.module.css';

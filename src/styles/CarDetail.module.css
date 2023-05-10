@@ -71,6 +71,11 @@
     padding: 70px 5%;
   }
 
+  .container a {
+    width: 70%;
+    margin-left: auto;
+  }
+
   .photoArea {
     display: flex;
     justify-content: center;

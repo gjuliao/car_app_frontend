@@ -44,6 +44,7 @@ export const login = createAsyncThunk(
     });
 
     const data = await res.json();
+    localStorage.setItem('Authorization', res.headers.get('Authorization'));
     localStorage.setItem('jti', data.user.jti);
     return data;
   },

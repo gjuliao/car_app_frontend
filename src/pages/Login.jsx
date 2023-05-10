@@ -39,7 +39,7 @@ const Login = () => {
   }, [formData]);
 
   useEffect(() => {
-    if (session.data?.user) {
+    if (localStorage.getItem('Authorization')) {
       navigate('/');
     }
   }, [session, navigate]);

@@ -22,15 +22,17 @@ export default function Detail() {
         </div>
       ) : (
         <section className={styles.container}>
-          <div>
-            <img className={styles.photo} src={data.payload?.image} alt="car" />
-            <h1 className={styles.title}>{data.payload?.model}</h1>
-            <p className={styles.subtitle}>
-              {`- $${data.payload?.price * 0.1} deposit upon any ${data.payload?.model} purchase`}
-            </p>
-            <DetailTable data={data.payload} />
+          <img className={styles.photo} src={data.payload?.image} alt="car" />
+          <div className={styles.info}>
+            <div>
+              <h1 className={styles.title}>{data.payload?.model}</h1>
+              <p className={styles.subtitle}>
+                {`- $${data.payload?.price * 0.1} deposit upon any ${data.payload?.model} purchase`}
+              </p>
+              <DetailTable data={data.payload} />
+            </div>
+            <button type="button" className={styles.reserveBtn}>Reserve</button>
           </div>
-          <button type="button" className={styles.reserveBtn}>Reserve</button>
         </section>
       )}
     </>

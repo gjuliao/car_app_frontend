@@ -1,9 +1,9 @@
 import React from 'react';
-import styles from '../styles/Footer.module.css';
+import footerStyles from '../styles/Footer.module.css';
 
 const Footer = () => (
-  <div className={styles.footer}>
-    <ul className={styles.footerList}>
+  <div className={footerStyles.footer}>
+    <ul className={footerStyles.footerList}>
       <li>My Reservations</li>
       <li>Add Car</li>
       <li>Delete Car</li>

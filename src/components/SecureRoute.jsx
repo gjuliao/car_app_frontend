@@ -1,10 +1,11 @@
 import React from 'react';
 import { Outlet, Navigate } from 'react-router-dom';
+import token from '../redux/Auth/token';
 
 const SecureRoute = () => {
-  const token = 'qwertyuiopasdfghjkl';
+  const secureAccess = token();
 
-  return token ? <Outlet /> : <Navigate to="/login" />;
+  return secureAccess ? <Outlet /> : <Navigate to="/login" />;
 };
 
 export default SecureRoute;

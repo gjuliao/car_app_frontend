@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 const reservationEndPoint = 'http://localhost:3000/api/v1/users';
 
 const initialState = {
-  reservations: [],
+  reservations: {},
   status: 'idle',
   message: '',
   error: '',
@@ -32,7 +32,7 @@ export const reserveCar = createAsyncThunk(RESERVATION, async ({ user, reservati
       'Content-Type': 'application/json',
       Authorization: localStorage.getItem('token'),
     },
-    body: JSON.stringify({ reservation }),
+    body: JSON.stringify({ ...reservation }),
   });
   const data = await response.json();
   return data;
@@ -56,7 +56,7 @@ const reservationSlice = createSlice({
   reducers: {
     addReservation: (state, action) => ({
       ...state,
-      reservations: [...state.reservations, action.payload],
+      reservations: action.payload,
     }),
     removeReservation: (state, action) => ({
       ...state,
@@ -65,13 +65,32 @@ const reservationSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
+      .addCase(reserveCar.pending, (state) => ({
+        ...state,
+        status: 'loading',
+      }))
+      .addCase(reserveCar.fulfilled, (state, action) => ({
+        ...state,
+        reservations: {
+          ...(action.payload.status === 201 ? action.payload.data : {}),
+          ...state.reservations,
+        },
+        message: action.payload.message,
+        status: action.payload.status,
+        error: action.payload.error,
+      }))
+      .addCase(reserveCar.rejected, (state, action) => ({
+        ...state,
+        status: 'failed',
+        error: action.payload.error,
+      }))
       .addCase(fetchReservations.pending, (state) => ({
         ...state,
         status: 'loading',
       }))
       .addCase(fetchReservations.fulfilled, (state, action) => ({
         ...state,
-        bookings: action.payload,
+        reservations: action.payload,
         status: 'success',
         error: action.payload.error,
       }))
@@ -80,6 +99,7 @@ const reservationSlice = createSlice({
         status: 'failed',
         error: action.payload.error,
       }))
+
       .addCase(deleteReservation.pending, (state) => ({
         ...state,
         status: 'loading',
@@ -88,12 +108,12 @@ const reservationSlice = createSlice({
         ...state,
         reservations: state.reservations.filter((reservation) => reservation.id !== action.payload),
         status: 'success',
-        message: 'Reservation deleted successfully',
+        message: 'Reservation successfully removed',
         error: action.payload.error,
       }));
   },
 });
 
-export const { addReservation, removeReservation } = reservationSlice.actions;
+export const { addReservation } = reservationSlice.actions;
 
 export default reservationSlice.reducer;

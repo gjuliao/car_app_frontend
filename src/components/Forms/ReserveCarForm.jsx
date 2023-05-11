@@ -3,50 +3,35 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import formStyle from '../../styles/ReserveCardForm.module.css';
-import { addReservation } from '../../redux/reservation/reservationSlice';
+import { addReservation, reserveCar } from '../../redux/reservation/reservationSlice';
 
-const cars = [
-  {
-    id: 1,
-    name: 'BMW-96',
-  },
-  {
-    id: 2,
-    name: 'Ford',
-  },
-  {
-    id: 3,
-    name: 'Hilux',
-  },
-  {
-    id: 4,
-    name: 'Revolution',
-  },
-];
 const ReserveCarForm = () => {
   const params = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const user = useSelector((state) => state.reservation);
+  const { user } = useSelector((state) => state.auth);
   const { message, error } = useSelector((state) => state.reservations);
+  const cars = useSelector((state) => state.carlist.cars);
 
   const [formData, setFormData] = useState({
     carId: params.id || '',
+    city: '',
     startDate: '',
     endDate: '',
   });
 
-  if (!user) navigate('/login');
+  if (!user) navigate('/');
 
-  const handleInput = (e) => {
-    const { name, value } = e.target;
+  const handleInput = (event) => {
+    const { name, value } = event.target;
     setFormData({ ...formData, [name]: value });
   };
-
   const handleSubmit = (event) => {
     event.preventDefault();
     const reservation = {
       car_id: formData.carId,
+      user_id: user.id,
+      city: formData.city,
       start_date: formData.startDate,
       return_date: formData.endDate,
     };
@@ -54,11 +39,12 @@ const ReserveCarForm = () => {
       reservation,
       userId: user.id,
     };
+    dispatch(reserveCar(carReservation));
     dispatch(addReservation(carReservation));
   };
 
   const handleNavigation = () => {
-    if (message === 'Car Reserved Successfully') window.location.href = '/my-reservations';
+    if (message === 'Reservation successfully created') window.location.href = '/my-reservation';
   };
 
   useEffect(() => {
@@ -78,7 +64,6 @@ const ReserveCarForm = () => {
       </p>
       <p style={{ color: 'red' }}>{ !error ? null : error }</p>
       <div className={formStyle.inputsContainer}>
-
         <div className={formStyle.reservation__field}>
           <select
             id="carId"
@@ -88,17 +73,34 @@ const ReserveCarForm = () => {
             required
           >
             <option value="">-- Select a Car --</option>
-            {
-              cars.map((car) => (
-
-                <option key={car.id} value={car.id}>
-                  {car.name}
+            {params.id
+              ? (
+                <option value={params.id}>
+                  {cars.payload.filter((car) => car.id === parseInt(params.id, 10))[0].name}
                 </option>
-
-              ))
-
-            }
+              ) : (
+                cars.payload?.map((car) => (
+                  <option key={car.id} value={car.id}>
+                    {car.brand}
+                  </option>
+                ))
+              )}
           </select>
+        </div>
+        <div className={formStyle.reservation__field}>
+          <label htmlFor="city" className={formStyle.form__label}>
+            City
+            <br />
+            <input
+              type="text"
+              id="city"
+              name="city"
+              value={formData.city}
+              onChange={handleInput}
+              placeholder="City"
+              required
+            />
+          </label>
         </div>
         <div className={formStyle.reservation__field}>
           <label htmlFor="startDate" className={formStyle.form__label}>

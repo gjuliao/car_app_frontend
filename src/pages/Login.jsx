@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import styles from '../styles/Login.module.css';
 import logo from '../assets/images/logo.png';
 import { login } from '../redux/sessionSlice';
+import { getUser } from '../redux/Auth/auth';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -39,7 +40,8 @@ const Login = () => {
   }, [formData]);
 
   useEffect(() => {
-    if (localStorage.getItem('Authorization')) {
+    if (session.data?.user) {
+      dispatch(getUser());
       navigate('/');
     }
   }, [session, navigate]);

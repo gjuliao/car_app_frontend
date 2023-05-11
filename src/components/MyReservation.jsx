@@ -1,27 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import styles from '../styles/MyReservations.module.css';
+import { fetchReservations } from '../redux/reservation/reservationSlice';
+import ReserveCard from './ReserveCard';
 
-const MyReservation = () => (
-  <div className={styles.myreservation}>
-    <h4 className={styles.myreservationTitle}>MY RENTED CARS</h4>
-    <table className={styles.myreservationTable}>
-      <tr>
-        <th>Rented Date</th>
-        <th>Car</th>
-        <th>Price</th>
-      </tr>
-      <tr>
-        <td>BMW</td>
-        <td>X-2</td>
-        <td>$5,000</td>
-      </tr>
-      <tr>
-        <td>BMW</td>
-        <td>X-5</td>
-        <td>$5,000</td>
-      </tr>
-    </table>
-  </div>
-);
+const MyReservation = () => {
+  const dispatch = useDispatch();
+  const reservations = useSelector((state) => state.reservations);
+
+  // const user_id = useSelector((state) => state.session.data.user.id);
+  // console.log(user_id);
+
+  useEffect(() => {
+    dispatch(fetchReservations());
+  }, []);
+  console.log(reservations);
+  return (
+    <div className={styles.myreservation}>
+      <ReserveCard />
+      <ReserveCard />
+      <ReserveCard />
+    </div>
+  );
+};
 
 export default MyReservation;

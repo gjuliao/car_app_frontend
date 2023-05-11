@@ -1,14 +1,24 @@
 .myreservation {
-  margin-left: 10%;
+  padding-left: 10%;
   width: 80%;
-  height: 80vh;
+  height: 100vh;
+  margin: auto;
+  padding-top: 2%;
+  margin-bottom: 10%;
 }
 
-.myreservationTitle {
-  margin-top: 10%;
+.card_container {
+  border: 1px solid gray;
+  width: 60%;
+  display: flex;
+  margin: 10%;
+  padding: 5%;
 }
 
-.myreservationTable {
-  width: 90%;
-  padding-top: 20%;
+.car_image {
+  width: 20%;
+}
+
+.body_container {
+  margin: auto;
 }

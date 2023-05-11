@@ -46,7 +46,7 @@ const Registration = () => {
 
   useEffect(() => {
     if (session.data?.user) {
-      navigate('/');
+      navigate('/login');
     }
   }, [session, navigate]);
 

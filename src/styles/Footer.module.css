@@ -17,11 +17,12 @@
 
 @media only screen and (max-width: 600px) {
   .footer {
-    width: 125%;
-    height: 15%;
+    width: 110%;
+    height: 20%;
     position: relative;
-    margin: auto;
     padding-top: 5%;
+    margin-left: -6%;
+    padding-left: 0;
   }
 
   .footerList {

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/futura-pt');
 
 :root {
   line-height: 1.5;
@@ -13,7 +15,7 @@
 #root {
   margin: 0;
   padding: 0;
-  font-family: 'Lexend Deca', sans-serif;
+  font-family: 'Futura PT', sans-serif;
   text-decoration: none;
   box-sizing: border-box;
 }

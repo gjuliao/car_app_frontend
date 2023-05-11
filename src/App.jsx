@@ -15,14 +15,10 @@ import DeleteCar from './pages/DeleteCar';
 import ReservationPage from './pages/ReservationPage';
 import CarDetail from './pages/CarDetail';
 
-import Car from './pages/Car';
 import './App.css';
 import Registration from './pages/Registration';
-// import token from './redux/Auth/token';
 
 const App = () => {
-  // const tokenSet = token();
-
   const dispatch = useDispatch();
   dispatch(fetchCars());
   return (
@@ -31,10 +27,9 @@ const App = () => {
       <Navbar />
       <div className="content">
         <Routes>
-          <Route path="/cars" element={<Main />} />
+          <Route path="/" element={<Main />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Registration />} />
-          <Route path="/cars" element={<Car />} />
           <Route element={<SecureRoute />}>
             <Route path="/cars/:id" element={<CarDetail />} />
             <Route path="/reservation" element={<ReservationPage />} />

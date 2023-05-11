@@ -12,8 +12,6 @@ const ReserveCarForm = () => {
   const { message, error } = useSelector((state) => state.reservations);
   const cars = useSelector((state) => state.carlist.cars);
 
-  const { id } = useSelector((state) => state.session.data.user);
-
   const [formData, setFormData] = useState({
     carId: params.id || '',
     city: '',
@@ -21,28 +19,24 @@ const ReserveCarForm = () => {
     endDate: '',
   });
 
-  if (!user) navigate('/login');
+  if (!user) navigate('/');
 
-  const handleInput = (e) => {
-    const property = e.target.name;
-    setFormData({
-      ...formData,
-      [property]: e.target.value,
-    });
+  const handleInput = (event) => {
+    const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
   };
-
   const handleSubmit = (event) => {
     event.preventDefault();
     const reservation = {
       car_id: formData.carId,
-      user_id: id,
+      user_id: user.id,
       city: formData.city,
       start_date: formData.startDate,
       return_date: formData.endDate,
     };
     const carReservation = {
       reservation,
-      userId: id,
+      userId: user.id,
     };
     dispatch(reserveCar(carReservation));
     dispatch(addReservation(carReservation));
@@ -69,7 +63,6 @@ const ReserveCarForm = () => {
       </p>
       <p style={{ color: 'red' }}>{ !error ? null : error }</p>
       <div className={formStyle.inputsContainer}>
-
         <div className={formStyle.reservation__field}>
           <select
             id="carId"

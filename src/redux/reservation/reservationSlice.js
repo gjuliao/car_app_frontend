@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 const reservationEndPoint = 'http://localhost:3000/api/v1/users';
 
 const initialState = {
-  reservations: [],
+  reservations: {},
   status: 'idle',
   message: '',
   error: '',
@@ -30,7 +30,7 @@ export const reserveCar = createAsyncThunk(RESERVATION, async ({ user, reservati
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: localStorage.getItem('jti'),
+      Authorization: localStorage.getItem('token'),
     },
     body: JSON.stringify({ ...reservation }),
   });
@@ -43,7 +43,7 @@ export const deleteReservation = createAsyncThunk(DELETE_RESERVATION, async ({ u
     method: 'DELETE',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: localStorage.getItem('jti'),
+      Authorization: localStorage.getItem('token'),
     },
   });
   const data = await response.json();
@@ -56,7 +56,7 @@ const reservationSlice = createSlice({
   reducers: {
     addReservation: (state, action) => ({
       ...state,
-      reservations: [...state.reservations, action.payload],
+      reservations: action.payload,
     }),
     removeReservation: (state, action) => ({
       ...state,
@@ -71,10 +71,10 @@ const reservationSlice = createSlice({
       }))
       .addCase(reserveCar.fulfilled, (state, action) => ({
         ...state,
-        reservations: [
-          ...(action.payload.status === 201 ? [action.payload.data] : []),
+        reservations: {
+          ...(action.payload.status === 201 ? action.payload.data : {}),
           ...state.reservations,
-        ],
+        },
         message: action.payload.message,
         status: action.payload.status,
         error: action.payload.error,

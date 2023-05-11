@@ -20,7 +20,7 @@ export const addCar = createAsyncThunk('cars/addCar', async (car) => {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      Authorization: localStorage.getItem('jti'),
+      Authorization: localStorage.getItem('token'),
     },
     body: JSON.stringify({ car }),
   });
@@ -57,7 +57,7 @@ export const deleteCar = createAsyncThunk('cars/deleteCar', async (id) => {
   const response = await fetch(`${baseURL}/cars/${id}`, {
     method: 'DELETE',
     headers: {
-      Authorization: localStorage.getItem('jti'),
+      Authorization: localStorage.getItem('token'),
     },
   });
   const deletedCar = await response.json();

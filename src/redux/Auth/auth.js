@@ -17,7 +17,7 @@ export const getUser = createAsyncThunk(
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        Authorization: localStorage.getItem('jti'),
+        Authorization: localStorage.getItem('token'),
       },
     });
 

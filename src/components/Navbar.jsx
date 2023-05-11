@@ -32,8 +32,9 @@ const Navbar = () => {
   }, [isOpen]);
 
   const handleLogout = () => {
-    localStorage.removeItem('jti');
+    localStorage.removeItem('token');
     localStorage.removeItem('user');
+    localStorage.removeItem('jti');
     window.location.href = '/';
   };
   useEffect(() => {

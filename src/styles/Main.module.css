@@ -1,5 +1,4 @@
 .main {
-  height: 100vh;
   padding-left: 6%;
 }
 
@@ -10,7 +9,7 @@
 
 .productSlider {
   width: 90%;
-  margin: auto;
+  margin-top: 5%;
   max-height: 90vh;
   overflow: hidden;
   margin-bottom: 15%;
@@ -66,6 +65,11 @@
   border: 1px solid gray;
 }
 
+.btnNext,
+.btnPrev {
+  display: none;
+}
+
 /* Styles for medium screens and larger */
 @media screen and (min-width: 768px) {
   .main {
@@ -77,22 +81,31 @@
   }
 
   .carLatest {
-    margin-top: 5%;
+    margin-top: 2%;
     padding-left: 0;
     margin-bottom: 0;
+    border-bottom: 1px solid lightgray;
+  }
+
+  .carDescription h4 {
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 5%;
+    margin-top: 18%;
   }
 
   .carLatest h6 {
-    margin-top: 0%;
-    border-bottom: 1px solid lightgray;
-    width: 90%;
+    margin-top: 2%;
+    width: 100%;
     color: lightgray;
+    margin-bottom: 2%;
   }
 
   .productSlider {
-    height: 40vh;
-    width: 100%;
-    margin-top: 10%;
+    width: 110%;
+    position: relative;
+    margin-left: 6%;
+    height: 50vh;
+    margin-top: 8%;
   }
 
   .productslide {
@@ -121,27 +134,51 @@
   .carDescription {
     margin: 0;
     padding-left: 0;
-    height: 20vh;
-  }
-
-  .carDescription h4 {
-    margin-top: 5%;
-    margin-bottom: 5%;
   }
 
   .carDescription h6 {
     color: lightgray;
-    margin-bottom: 5%;
+    margin-top: 5%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 90%;
+    margin-bottom: 8%;
   }
 
   .carSocial {
     width: 60%;
     margin: auto;
     color: lightgray;
-    padding-bottom: 5%;
+    z-index: 4;
+    display: flex;
   }
 
-  .carIcons {
-    border: 1px solid lightgray;
+  .btnNext {
+    background-color: green;
+    position: fixed;
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    padding: 2em;
+    z-index: 2;
+    right: 1%;
+    margin-top: 6%;
+    display: block;
+    color: white;
+    border: none;
+  }
+
+  .btnPrev {
+    background-color: green;
+    color: white;
+    position: fixed;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    padding: 2em;
+    z-index: 2;
+    left: 20%;
+    margin-top: 6%;
+    display: block;
+    border: none;
   }
 }

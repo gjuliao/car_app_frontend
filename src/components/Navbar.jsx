@@ -1,14 +1,12 @@
 import React, { useCallback, useEffect, useState } from 'react';
 import { NavLink, useLocation } from 'react-router-dom';
-// icons
 import { FaFacebookF, FaVimeoV, FaPinterestP } from 'react-icons/fa';
 import { AiOutlineTwitter } from 'react-icons/ai';
 import { TiSocialGooglePlus } from 'react-icons/ti';
-// assets
-import navbar from '../styles/Navbar.module.css';
-import logo from '../assets/images/logo.png';
 import getCurrentDate from '../common/utils';
 import token from '../redux/Auth/token';
+import navbar from '../styles/Navbar.module.css';
+import logo from '../assets/images/logo.png';
 
 const handleActive = ({ isActive }) => (isActive
   ? {
@@ -43,7 +41,7 @@ const Navbar = () => {
         setMenuItems('white-bars');
         break;
       case '/reservation':
-        setMenuItems('');
+        setMenuItems('white-bars');
         break;
       default:
         setMenuItems('');
@@ -60,7 +58,7 @@ const Navbar = () => {
           </div>
           <div className={`${navbar.menuItems} ${isOpen ? navbar.open : ''}`}>
             <img src={logo} alt="Logo" className={navbar.logo} />
-            <NavLink to="/cars" style={handleActive} className={navbar.link} onClick={toggleMenu}>
+            <NavLink to="/" style={handleActive} className={navbar.link} onClick={toggleMenu}>
               Cars
             </NavLink>
             {
@@ -78,7 +76,7 @@ const Navbar = () => {
                   <NavLink to="/delete-car" style={handleActive} className={navbar.link} onClick={toggleMenu}>
                     Delete car
                   </NavLink>
-                  <NavLink to="/" style={handleActive} className={navbar.link} onClick={handleLogout}>
+                  <NavLink to="/" className={navbar.logout} onClick={handleLogout}>
                     Log out
                   </NavLink>
                 </>

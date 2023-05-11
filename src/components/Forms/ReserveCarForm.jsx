@@ -1,9 +1,8 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import formStyle from '../../styles/ReserveCardForm.module.css';
 import { addReservation, reserveCar } from '../../redux/reservation/reservationSlice';
+import formStyle from '../../styles/ReserveCardForm.module.css';
 
 const ReserveCarForm = () => {
   const params = useParams();
@@ -30,7 +29,6 @@ const ReserveCarForm = () => {
     event.preventDefault();
     const reservation = {
       car_id: formData.carId,
-      user_id: user.id,
       city: formData.city,
       start_date: formData.startDate,
       return_date: formData.endDate,
@@ -55,7 +53,7 @@ const ReserveCarForm = () => {
     <form onSubmit={handleSubmit} className={formStyle.formContainer}>
       <div className={formStyle.car__background} />
       { !message ? null : <p className={formStyle.success}>{message}</p>}
-      <h1 className={formStyle.header}>Reserve Cars </h1>
+      <h1 className={formStyle.header}>Reserve Latest Model Cars </h1>
       <p className={formStyle.description}>
         Lorem Ipsum is simply dummy text of the printing and typesetting industry.
         Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s,

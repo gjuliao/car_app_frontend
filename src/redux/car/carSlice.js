@@ -76,10 +76,10 @@ const carsSlice = createSlice({
       ...state,
       cars: state.cars.filter((car) => car.id !== action.payload),
     }),
-    setMessageEmpty: (state, action) => ({
-      ...state,
-      message: action.payload,
-    }),
+    // setMessageEmpty: (state, action) => ({
+    //   ...state,
+    //   message: action.payload.data.message,
+    // }),
   },
   extraReducers: (builder) => {
     builder
@@ -93,14 +93,14 @@ const carsSlice = createSlice({
           ...(action.payload.status === 201 ? action.payload.data : {}),
           ...state.cars,
         },
-        message: action.payload.message,
-        status: action.payload.status,
+        // message: action.payload.data.message,
+        // status: data.status,
       }))
-      .addCase(addCar.rejected, (state, action) => ({
-        ...state,
-        status: 'error',
-        message: action.payload.message,
-      }))
+      // .addCase(addCar.rejected, (state, action) => ({
+      //   ...state,
+      //   status: 'error',
+      //   message: action.payload.data.message,
+      // }))
       .addCase(fetchCars.pending, (state) => ({
         ...state,
         status: 'loading',
@@ -113,7 +113,7 @@ const carsSlice = createSlice({
       .addCase(fetchCars.rejected, (state, action) => ({
         ...state,
         status: 'error',
-        message: action.payload.message,
+        message: action.payload,
       }))
       .addCase(deleteCar.pending, (state) => ({
         ...state,
@@ -123,12 +123,12 @@ const carsSlice = createSlice({
         ...state,
         status: 'success',
         cars: state.cars.filter((car) => car.id !== action.payload),
-        message: action.payload.message,
+        message: action.payload,
       }))
       .addCase(deleteCar.rejected, (state, action) => ({
         ...state,
         status: 'error',
-        message: action.payload.message,
+        message: action.payload,
       }));
   },
 });

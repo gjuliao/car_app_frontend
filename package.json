@@ -20,6 +20,7 @@
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.11.1",
     "react-select": "^5.7.3",
+    "react-test-renderer": "^18.2.0",
     "redux": "^4.2.1",
     "swiper": "^9.3.0"
   },
@@ -45,6 +46,7 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29.5.0",
     "jest-environment-jsdom": "^29.5.0",
+    "jest-transform-stub": "^2.0.0",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^21.0.0",
     "stylelint-csstree-validator": "^1.9.0",
@@ -53,10 +55,11 @@
   },
   "jest": {
     "transform": {
-      "^.+\\.jsx?$": "babel-jest"
+      "^.+\\.jsx?$": "babel-jest",
+      ".+\\.(css|scss|png|jpg|svg)$": "jest-transform-stub"
     },
     "moduleNameMapper": {
-      "\\\\.module\\\\.css$": "identity-obj-proxy"
+      "\\.(css|scss)$": "identity-obj-proxy"
     },
     "testEnvironment": "jest-environment-jsdom"
   }

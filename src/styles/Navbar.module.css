@@ -8,6 +8,7 @@
 
 .logo {
   height: 5rem;
+  width: 100%;
 }
 
 .menu__bars {
@@ -77,8 +78,43 @@
   padding: 10px 0;
 }
 
+.login,
+.signup {
+  padding: 0.8rem 0;
+  margin-top: 0.25rem;
+  font-size: 1.2rem;
+  width: 100%;
+  background: whitesmoke;
+  transition: all 0.5s  ease-in-out;
+  -webkit-transition: all 0.5s  ease-in-out;
+  -moz-transition: all 0.5s  ease-in-out;
+  -ms-transition: all 0.5s  ease-in-out;
+  -o-transition: all 0.5s  ease-in-out;
+  color: rgba(87, 92, 84, 0.973);
+  opacity: 0.8;
+}
+
+.login:hover,
+.signup:hover {
+  background: rgb(149, 192, 16);
+  color: #fff;
+}
+
 .nav__footer {
   display: none;
+}
+
+.social_links {
+  color: gray;
+  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s ease-in-out;
+  -moz-transition: all 0.5s ease-in-out;
+  -ms-transition: all 0.5s ease-in-out;
+  -o-transition: all 0.5s ease-in-out;
+}
+
+.social_links:hover {
+  color: blue;
 }
 
 @media screen and (min-width: 800px) {

@@ -1,2 +1,2 @@
-const token = () => localStorage.getItem('token') || '';
+const token = () => localStorage.getItem('jti') || '';
 export default token;

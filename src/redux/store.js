@@ -3,6 +3,7 @@ import reservationReducer from './reservation/reservationSlice';
 import auth from './Auth/auth';
 import sessionReducer from './sessionSlice';
 import carReducer from './carDetail/carDetailSlice';
+import carItemsReducer, { fetchCars } from './car/carSlice';
 
 const store = configureStore({
   reducer: {
@@ -10,7 +11,8 @@ const store = configureStore({
     reservations: reservationReducer,
     session: sessionReducer,
     car: carReducer,
+    carlist: carItemsReducer,
   },
 });
-
+store.dispatch(fetchCars());
 export default store;

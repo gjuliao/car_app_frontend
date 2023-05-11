@@ -65,42 +65,55 @@ const Navbar = () => {
             {
               accessControl ? (
                 <>
-            <NavLink to="/reservation" style={handleActive} className={navbar.link} onClick={toggleMenu}>
-              Reservation
-            </NavLink>
-            <NavLink to="/my-reservation" style={handleActive} className={navbar.link} onClick={toggleMenu}>
-              My Reservation
-            </NavLink>
-            <NavLink to="/add-car" style={handleActive} className={navbar.link} onClick={toggleMenu}>
-              Add car
-            </NavLink>
-            <NavLink to="/delete-car" style={handleActive} className={navbar.link} onClick={toggleMenu}>
-              Delete car
-            </NavLink>
-            <NavLink to="/" style={handleActive} className={navbar.link} onClick={handleLogout}>
-              Log out
-            </NavLink>
+                  <NavLink to="/reservation" style={handleActive} className={navbar.link} onClick={toggleMenu}>
+                    Reservation
+                  </NavLink>
+                  <NavLink to="/my-reservation" style={handleActive} className={navbar.link} onClick={toggleMenu}>
+                    My Reservation
+                  </NavLink>
+                  <NavLink to="/add-car" style={handleActive} className={navbar.link} onClick={toggleMenu}>
+                    Add car
+                  </NavLink>
+                  <NavLink to="/delete-car" style={handleActive} className={navbar.link} onClick={toggleMenu}>
+                    Delete car
+                  </NavLink>
+                  <NavLink to="/" style={handleActive} className={navbar.link} onClick={handleLogout}>
+                    Log out
+                  </NavLink>
                 </>
-              ):(
+              ) : (
                 <>
-                <NavLink to="/register" className={navbar.signup} onClick={toggleMenu}>
-                 Sign Up </NavLink>
-                <NavLink to="/login" className={navbar.login} onClick={toggleMenu}>
-                 Log In </NavLink>
+                  <NavLink to="/register" className={navbar.signup} onClick={toggleMenu}>
+                    Sign Up
+                    {' '}
+                  </NavLink>
+                  <NavLink to="/login" className={navbar.login} onClick={toggleMenu}>
+                    Log In
+                    {' '}
+                  </NavLink>
                 </>
-              )}
+              )
+}
             <div className={navbar.nav__footer}>
               <div className={navbar.social__icons}>
-                <NavLink to="https://twitter.com/" className={navbar.social_links}><AiOutlineTwitter />
+                <NavLink to="https://twitter.com/" className={navbar.social_links}>
+                  <AiOutlineTwitter />
                 </NavLink>
-                <NavLink to="https://facebook.com/" className={navbar.social_links}><FaFacebookF />
+                <NavLink to="https://facebook.com/" className={navbar.social_links}>
+                  <FaFacebookF />
                 </NavLink>
-                <NavLink to="https://www.google.com/" className={navbar.social_links}> <TiSocialGooglePlus />
+                <NavLink to="https://www.google.com/" className={navbar.social_links}>
+                  {' '}
+                  <TiSocialGooglePlus />
                 </NavLink>
-                <NavLink to="https://www.vimo.me/" className={navbar.social_links}> <FaVimeoV />
+                <NavLink to="https://www.vimo.me/" className={navbar.social_links}>
+                  {' '}
+                  <FaVimeoV />
                 </NavLink>
-                <NavLink to="https://www.pinterest.com/" className={navbar.social_links}> <FaPinterestP />
-                </NavLink>                
+                <NavLink to="https://www.pinterest.com/" className={navbar.social_links}>
+                  {' '}
+                  <FaPinterestP />
+                </NavLink>
               </div>
               <div className={navbar.copyright}>
                 &copy;

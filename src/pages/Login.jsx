@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import styles from '../styles/Login.module.css';
 import logo from '../assets/images/logo.png';
 import { login } from '../redux/sessionSlice';
+import { getUser } from '../redux/Auth/auth';
 
 const Login = () => {
   const navigate = useNavigate();
@@ -40,6 +41,7 @@ const Login = () => {
 
   useEffect(() => {
     if (session.data?.user) {
+      dispatch(getUser());
       navigate('/');
     }
   }, [session, navigate]);

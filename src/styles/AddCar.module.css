@@ -1,40 +1,40 @@
 .container {
-    padding-top: 75px;
-    padding-bottom: 20px;
-    background-image: url(../assets/images/vertical_road_bg.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
+  padding-top: 75px;
+  padding-bottom: 20px;
+  background-image: url(../assets/images/vertical_road_bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .addForm {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 0 10%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0 10%;
 }
 
 .formInput {
-    border: 1px solid lightgray;
-    border-radius: 50px;
-    height: 35px;
-    padding: 0 20px;
+  border: 1px solid lightgray;
+  border-radius: 50px;
+  height: 35px;
+  padding: 0 20px;
 }
 
 .formText {
-    border-radius: 15px;
-    border: 1px solid lightgray;
-    height: 100px;
-    padding: 10px 20px;
+  border-radius: 15px;
+  border: 1px solid lightgray;
+  height: 100px;
+  padding: 10px 20px;
 }
 
 .photo {
-    border-radius: 15px;
+  border-radius: 15px;
 }
 
 .submit {
-    height: 40px;
-    border-radius: 50px;
-    border: 0;
-    background-color: #21bf73;
-    color: white;
+  height: 40px;
+  border-radius: 50px;
+  border: 0;
+  background-color: #21bf73;
+  color: white;
 }

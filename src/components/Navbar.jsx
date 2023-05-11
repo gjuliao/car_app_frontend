@@ -8,6 +8,7 @@ import { TiSocialGooglePlus } from 'react-icons/ti';
 import navbar from '../styles/Navbar.module.css';
 import logo from '../assets/images/logo.png';
 import getCurrentDate from '../common/utils';
+import token from '../redux/Auth/token';
 
 const handleActive = ({ isActive }) => (isActive
   ? {
@@ -21,6 +22,7 @@ const handleActive = ({ isActive }) => (isActive
   });
 
 const Navbar = () => {
+  const accessControl = token();
   const [isOpen, setIsOpen] = useState(false);
   const [menuItems, setMenuItems] = useState('');
   const location = useLocation();
@@ -28,8 +30,11 @@ const Navbar = () => {
   const toggleMenu = useCallback(() => {
     setIsOpen(!isOpen);
   }, [isOpen]);
-  const handleLogout = () => {
 
+  const handleLogout = () => {
+    localStorage.removeItem('jti');
+    localStorage.removeItem('user');
+    window.location.href = '/';
   };
   useEffect(() => {
     switch (location.pathname) {
@@ -57,10 +62,12 @@ const Navbar = () => {
             <NavLink to="/cars" style={handleActive} className={navbar.link} onClick={toggleMenu}>
               Cars
             </NavLink>
+            {
+              accessControl ? (
+                <>
             <NavLink to="/reservation" style={handleActive} className={navbar.link} onClick={toggleMenu}>
               Reservation
             </NavLink>
-
             <NavLink to="/my-reservation" style={handleActive} className={navbar.link} onClick={toggleMenu}>
               My Reservation
             </NavLink>
@@ -73,13 +80,27 @@ const Navbar = () => {
             <NavLink to="/" style={handleActive} className={navbar.link} onClick={handleLogout}>
               Log out
             </NavLink>
+                </>
+              ):(
+                <>
+                <NavLink to="/register" className={navbar.signup} onClick={toggleMenu}>
+                 Sign Up </NavLink>
+                <NavLink to="/login" className={navbar.login} onClick={toggleMenu}>
+                 Log In </NavLink>
+                </>
+              )}
             <div className={navbar.nav__footer}>
               <div className={navbar.social__icons}>
-                <AiOutlineTwitter />
-                <FaFacebookF />
-                <TiSocialGooglePlus />
-                <FaVimeoV />
-                <FaPinterestP />
+                <NavLink to="https://twitter.com/" className={navbar.social_links}><AiOutlineTwitter />
+                </NavLink>
+                <NavLink to="https://facebook.com/" className={navbar.social_links}><FaFacebookF />
+                </NavLink>
+                <NavLink to="https://www.google.com/" className={navbar.social_links}> <TiSocialGooglePlus />
+                </NavLink>
+                <NavLink to="https://www.vimo.me/" className={navbar.social_links}> <FaVimeoV />
+                </NavLink>
+                <NavLink to="https://www.pinterest.com/" className={navbar.social_links}> <FaPinterestP />
+                </NavLink>                
               </div>
               <div className={navbar.copyright}>
                 &copy;

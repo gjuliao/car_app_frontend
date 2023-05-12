@@ -42,9 +42,9 @@ const AddCar = () => {
 
   const sendForm = (e) => {
     e.preventDefault();
-    dispatch(addCar(formData)).then((response)=> {
-      if( response.status !== 'error') navigate('/cars')
-    })
+    dispatch(addCar(formData)).then((response) => {
+      if (response.status !== 'error') navigate('/cars');
+    });
   };
 
   useEffect(() => {

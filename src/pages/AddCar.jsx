@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addCar } from '../redux/car/carSlice';
 import styles from '../styles/AddCar.module.css';
 import noImage from '../assets/images/no_image_available.jpg';
 
 const AddCar = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [formData, setFormData] = useState({});
   const [isValid, setIsValid] = useState(false);
@@ -40,7 +42,9 @@ const AddCar = () => {
 
   const sendForm = (e) => {
     e.preventDefault();
-    dispatch(addCar(formData));
+    dispatch(addCar(formData)).then((response)=> {
+      if( response.status !== 'error') navigate('/cars')
+    })
   };
 
   useEffect(() => {

@@ -30,8 +30,7 @@ const MyReservation = () => {
         <div className={styles.card_container}>
           <Link to="/reservation" className={styles.btn} type="button">Rent a Car</Link>
           <div className={styles.body_container}>
-            <h4><b>Rent your first car.</b></h4>
-            <p>You havent rented a car yet!</p>
+            <h4><b>You havent rented a car yet!</b></h4>
           </div>
         </div>
       )}

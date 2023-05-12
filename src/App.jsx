@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import SecureRoute from './components/SecureRoute';
 import MyReservation from './components/MyReservation';
 import Main from './components/Main';
+import Startup from './components/Startup';
 
 import { fetchCars } from './redux/car/carSlice';
 // pages
@@ -24,14 +25,15 @@ const App = () => {
   return (
 
     <div className="container">
+      <Startup />
       <Navbar />
       <div className="content">
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Registration />} />
+          <Route path="/cars/:id" element={<CarDetail />} />
           <Route element={<SecureRoute />}>
-            <Route path="/cars/:id" element={<CarDetail />} />
             <Route path="/reservation" element={<ReservationPage />} />
             <Route path="/reservation/:id" element={<ReservationPage />} />
             <Route path="/my-reservation" element={<MyReservation />} />

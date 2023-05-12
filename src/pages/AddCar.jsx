@@ -21,8 +21,20 @@ const AddCar = () => {
         <input className={styles.formInput} type="text" name="year" placeholder="Year" onChange={changeHandler} />
         <input className={styles.formInput} type="text" name="color" placeholder="Color" onChange={changeHandler} />
         <input className={styles.formInput} type="text" name="accidents" placeholder="Accidents" onChange={changeHandler} />
-        <input className={styles.formInput} type="text" name="electric" placeholder="Electric" onChange={changeHandler} />
-        <input className={styles.formInput} type="text" name="rented" placeholder="Rented" onChange={changeHandler} />
+        <select className={styles.formInput} type="text" name="electric" placeholder="Electric" onChange={changeHandler}>
+          <option className={styles.nullOption} value={null}>
+            Select: Electric or Gas
+          </option>
+          <option value>Electric</option>
+          <option value={false}>Gas</option>
+        </select>
+        <select className={styles.formInput} type="text" name="rented" placeholder="Rented" onChange={changeHandler}>
+          <option className={styles.nullOption} value={null}>
+            Select: Available or Not available
+          </option>
+          <option value>Not available</option>
+          <option value={false}>Available</option>
+        </select>
         <input className={styles.formInput} type="text" name="image" placeholder="Image URL" onChange={changeHandler} />
         <img className={styles.photo} src={formData.image || noImage} alt="upload model" />
         <textarea className={styles.formText} name="description" placeholder="Add description here..." onChange={changeHandler} />

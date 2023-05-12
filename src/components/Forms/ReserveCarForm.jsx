@@ -37,6 +37,7 @@ const ReserveCarForm = () => {
       reservation,
       userId: user.id,
     };
+    console.log(user);
     dispatch(reserveCar(carReservation));
     dispatch(addReservation(carReservation));
   };

@@ -3,7 +3,9 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 const reservationEndPoint = 'http://localhost:3000/api/v1/users';
 
 const initialState = {
-  reservations: {},
+  reservations: {
+    payload: [],
+  },
   status: 'idle',
   message: '',
   error: '',

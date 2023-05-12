@@ -7,23 +7,22 @@ import ReserveCard from './ReserveCard';
 
 const MyReservation = () => {
   const dispatch = useDispatch();
-  const reservations = useSelector((state) => state.reservations);
+  const reservations = useSelector((state) => state.reservations.reservations.payload);
 
-  // const user_id = useSelector((state) => state.session.data.user.id);
-  // console.log(user_id);
+  const userId = useSelector((state) => state.session.data.user.id);
 
   useEffect(() => {
-    dispatch(fetchReservations());
+    dispatch(fetchReservations(userId));
   }, []);
+
   console.log(reservations);
+
   return (
     <div>
       { reservations.length > 0 ? (
         reservations.map((car) => (
-          <div className={styles.myreservation}>
-            <ReserveCard />
-            <ReserveCard />
-            <ReserveCard />
+          <div key={car.id} className={styles.myreservation}>
+            <ReserveCard start={car.start_date} back={car.return_date} />
           </div>
         ))
       ) : (

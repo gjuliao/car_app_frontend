@@ -1,18 +1,20 @@
 .myreservation {
   padding-left: 10%;
   width: 80%;
-  height: 100vh;
   margin: auto;
   padding-top: 2%;
-  margin-bottom: 10%;
+  margin-bottom: 5%;
+  margin-top: 5%;
 }
 
 .card_container {
-  border: 1px solid gray;
-  width: 60%;
+  border: 2px solid rgb(232, 231, 231);
+  border-radius: 5%;
+  width: 75%;
   display: flex;
-  margin: 10%;
+  margin: 2%;
   padding: 5%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .car_image {
@@ -21,6 +23,7 @@
 
 .body_container {
   margin: auto;
+  width: 60%;
 }
 
 .btn {
@@ -34,22 +37,45 @@
   background-color: darkgreen;
 }
 
+.dates {
+  display: flex;
+  font-size: 0.6rem;
+  justify-content: space-between;
+}
+
+.dates p {
+  padding: 2%;
+}
+
 @media only screen and (max-width: 600px) {
   .myreservation {
     width: 80%;
   }
+
+  .car_image {
+    width: 100%;
+    padding-bottom: 15%;
+    padding-top: 8%;
+  }
   
   .card_container {
     border: 1px solid gray;
-    width: 60%;
+    width: 100%;
     display: flex;
     margin: auto;
-    padding-top: 40%;
+    padding: 5%;
     flex-direction: column;
     border: none;
+    margin-top: 10%;
+  }
+
+  .dates {
+    flex-direction: column;
   }
 
   .body_container {
-    margin-top: 10%;
+    margin: auto;
+    width: 100%;
   }
+  
 }

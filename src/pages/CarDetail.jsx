@@ -8,6 +8,7 @@ import styles from '../styles/CarDetail.module.css';
 
 export default function Detail() {
   const dispatch = useDispatch();
+  const user = useSelector((store) => store.session.data);
   const data = useSelector((store) => store.car.data);
   const { id } = useParams();
 
@@ -34,9 +35,13 @@ export default function Detail() {
               </p>
               <DetailTable data={data.payload} />
             </div>
-            <Link to={`/reservation/${id}`}>
-              <button type="button" className={styles.reserveBtn}>Reserve</button>
-            </Link>
+            {Object.keys(user).length ? (
+              <Link to={`/reservation/${id}`}>
+                <button type="button" className={styles.reserveBtn}>Reserve</button>
+              </Link>
+            ) : (
+              <p>You need to be logged in to reserve a car</p>
+            )}
           </div>
         </section>
       )}

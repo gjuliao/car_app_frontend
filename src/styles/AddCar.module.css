@@ -54,3 +54,8 @@
   max-width: 600px;
   margin: auto;
 }
+
+.submit:disabled {
+  background-color: lightgrey;
+  color: gray;
+}

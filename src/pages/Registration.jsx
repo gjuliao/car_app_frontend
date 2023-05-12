@@ -20,7 +20,8 @@ const Registration = () => {
     });
   };
 
-  const sendForm = async () => {
+  const sendForm = async (e) => {
+    e.preventDefault();
     dispatch(signUp(formData));
   };
 
@@ -57,7 +58,7 @@ const Registration = () => {
           <div className={styles.welcome}> </div>
         </div>
         <div className={styles.formArea}>
-          <form>
+          <form onSubmit={sendForm}>
             <img src={logo} alt="logo" />
             <p>SIGN UP</p>
             <input type="text" placeholder="user name" name="name" onChange={changeHandler} />
@@ -65,7 +66,7 @@ const Registration = () => {
             <input type="password" placeholder="password" name="password" onChange={changeHandler} />
             <input type="password" placeholder="confirm password" name="password_confirmation" onChange={changeHandler} />
             <p className={styles.error}>{session.data.error || session.data.message}</p>
-            <button type="button" disabled={!isFormValid} onClick={sendForm}>SIGNUP</button>
+            <button type="submit" disabled={!isFormValid}>SIGNUP</button>
             <Link to="/login">Have a user?</Link>
           </form>
         </div>

@@ -21,7 +21,8 @@ const Login = () => {
     });
   };
 
-  const sendForm = () => {
+  const sendForm = (e) => {
+    e.preventDefault();
     dispatch(login(formData));
   };
 
@@ -40,7 +41,7 @@ const Login = () => {
   }, [formData]);
 
   useEffect(() => {
-    if (session.data?.user) {
+    if (localStorage.getItem('token')) {
       dispatch(getUser());
       navigate('/');
     }
@@ -53,13 +54,13 @@ const Login = () => {
           <div className={styles.welcome}> </div>
         </div>
         <div className={styles.formArea}>
-          <form>
+          <form onSubmit={sendForm}>
             <img src={logo} alt="logo" />
             <p>LOG IN</p>
             <input type="text" placeholder="email" name="email" onChange={changeHandler} />
             <input type="password" placeholder="password" name="password" onChange={changeHandler} />
             <p className={styles.error}>{session.data.error}</p>
-            <button type="button" disabled={!isFormValid} onClick={sendForm}>LOGIN</button>
+            <button type="submit" disabled={!isFormValid}>LOGIN</button>
             <Link to="/register">Create account</Link>
           </form>
         </div>

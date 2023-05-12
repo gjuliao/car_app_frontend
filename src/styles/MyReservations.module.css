@@ -22,3 +22,14 @@
 .body_container {
   margin: auto;
 }
+
+.btn {
+  padding: 4%;
+  background-color: green;
+  color: white;
+  border: none;
+}
+
+.btn:hover {
+  background-color: darkgreen;
+}

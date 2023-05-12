@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import styles from '../styles/MyReservations.module.css';
 import { fetchReservations } from '../redux/reservation/reservationSlice';
 import ReserveCard from './ReserveCard';
@@ -16,10 +17,24 @@ const MyReservation = () => {
   }, []);
   console.log(reservations);
   return (
-    <div className={styles.myreservation}>
-      <ReserveCard />
-      <ReserveCard />
-      <ReserveCard />
+    <div>
+      { reservations.length > 0 ? (
+        reservations.map((car) => (
+          <div className={styles.myreservation}>
+            <ReserveCard />
+            <ReserveCard />
+            <ReserveCard />
+          </div>
+        ))
+      ) : (
+        <div className={styles.card_container}>
+          <Link to="/reservation" className={styles.btn} type="button">Rent a Car</Link>
+          <div className={styles.body_container}>
+            <h4><b>Rent your first car.</b></h4>
+            <p>You havent rented a car yet!</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

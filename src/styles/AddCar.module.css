@@ -1,0 +1,61 @@
+.container {
+  padding-top: 75px;
+  padding-bottom: 20px;
+  background-image: url(../assets/images/green_texture_1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.addForm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 0 10%;
+}
+
+.formInput {
+  border: 1px solid lightgray;
+  border-radius: 50px;
+  height: 35px;
+  padding: 0 20px;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+}
+
+.formText {
+  border-radius: 15px;
+  border: 1px solid lightgray;
+  height: 100px;
+  padding: 10px 20px;
+  margin: auto;
+  width: 100%;
+  max-width: 600px;
+}
+
+.nullOption {
+  color: lightgray;
+}
+
+.photo {
+  border-radius: 15px;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+}
+
+.submit {
+  height: 40px;
+  border-radius: 50px;
+  border: 0;
+  background-color: #21bf73;
+  color: white;
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+}
+
+.submit:disabled {
+  background-color: lightgrey;
+  color: gray;
+}

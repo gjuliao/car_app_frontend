@@ -71,7 +71,7 @@ function ProductSlider() {
         }}
         onSwiper={handleSwiper}
       >
-        {cars.length > 0 ? (
+        {cars?.length > 0 ? (
           cars.map((car) => (
             <SwiperSlide key={car.id}>
               <CarCard

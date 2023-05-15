@@ -59,7 +59,7 @@ const Login = () => {
             <p>LOG IN</p>
             <input type="text" placeholder="email" name="email" onChange={changeHandler} />
             <input type="password" placeholder="password" name="password" onChange={changeHandler} />
-            <p className={styles.error}>{session.data.error}</p>
+            <p className={styles.error}>{session.data.message}</p>
             <button type="submit" disabled={!isFormValid}>LOGIN</button>
             <Link to="/register">Create account</Link>
           </form>

@@ -23,7 +23,6 @@ export const signUp = createAsyncThunk(
     });
 
     const data = await res.json();
-    localStorage.setItem('jti', data.user.jti);
     return data;
   },
 );
@@ -44,8 +43,9 @@ export const login = createAsyncThunk(
     });
 
     const data = await res.json();
-    localStorage.setItem('token', res.headers.get('Authorization'));
-    localStorage.setItem('jti', data.user.jti);
+    if (data.errors === false) {
+      localStorage.setItem('token', res.headers.get('Authorization'));
+    }
     return data;
   },
 );

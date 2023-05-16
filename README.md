@@ -24,8 +24,10 @@
 
 # 📖 Car APP - Front End <a name="about-project"></a>
 
-** Car APP - Front End ** Is a React Front-End project for users to rent cars, and Admins to create and delete cars.  Users will have the chance to view the historu of cars reserved.
-To check the Ruby on Rails Back-End for this project you can visit the folloing [Github repo link](https://github.com/gjuliao/car_app_backend).
+** Car APP - Front End ** Is a React Front-End project for users to rent cars, and Admins to create and delete cars.  Users will have the chance to view the history of cars reserved.
+To check the Ruby on Rails Back-End for this project you can visit the following 
+
+[Github repo link](https://github.com/gjuliao/car_app_backend).
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -40,7 +42,7 @@ To check the Ruby on Rails Back-End for this project you can visit the folloing 
 
 ### Key Features <a name="key-features"></a>
 
-- **Users can view Cars signup, login and reserve cars.**
+- **Users can view Cars, signup, login and reserve cars.**
 - **Admin can login, add and delete cars.**
 - **Users can view history of cars**
 - **Users can view characteristics of cars (price, electric, brand and much more).**
@@ -83,7 +85,7 @@ cd car_app_frontend
 
 ### Install
 
-Install dependancies with:
+Install dependencies with:
 
 ```bash
 npm install
@@ -171,8 +173,8 @@ If you like this project please give it a star.
 <!-- ACKNOWLEDGEMENTS -->
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
-
-Special thanks to [Murat Korkmaz for Vespa- Resnponsive Design](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign)
+- We would like to thank Microverse community
+- Special thanks to [Murat Korkmaz for Vespa- Resnponsive Design](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LICENSE -->

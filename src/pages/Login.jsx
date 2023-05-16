@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import styles from '../styles/Login.module.css';
 import logo from '../assets/images/logo.png';
-import { login } from '../redux/sessionSlice';
+import { login, clearError } from '../redux/sessionSlice';
 import { getUser } from '../redux/Auth/auth';
 
 const Login = () => {
@@ -47,6 +47,10 @@ const Login = () => {
       navigate('/');
     }
   }, [session, navigate]);
+
+  useEffect(() => {
+    dispatch(clearError())
+  }, [])
 
   return (
     <section className={styles.onTopContainer}>

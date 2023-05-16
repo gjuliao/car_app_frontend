@@ -10,9 +10,7 @@ export default function Startup() {
 
   if (user && token) {
     dispatch(setUserData({
-      user: {
         ...user,
-      },
     }));
   }
 

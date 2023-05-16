@@ -57,16 +57,28 @@ const sessionSlice = createSlice({
     setUserData(state, action) {
       state.data = action.payload;
     },
+    clearError(state) {
+      state.data = {
+        ...state.data,
+        message: '',
+      }
+    }
   },
   extraReducers: (builder) => {
     builder.addCase(signUp.fulfilled, (state, action) => {
       state.data = action.payload;
     });
+    builder.addCase(signUp.rejected, (state, action) => {
+      state.data = { message: "Login rejected by connection problem" };
+    });
     builder.addCase(login.fulfilled, (state, action) => {
       state.data = action.payload;
+    });
+    builder.addCase(login.rejected, (state, action) => {
+      state.data = { message: "Login rejected by connection problem" };
     });
   },
 });
 
-export const { setUserData } = sessionSlice.actions;
+export const { setUserData, clearError } = sessionSlice.actions;
 export default sessionSlice.reducer;

@@ -3,9 +3,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 const reservationEndPoint = 'http://localhost:3000/api/v1/users';
 
 const initialState = {
-  reservations: {
-    payload: [],
-  },
+  payload: [],
   status: 'idle',
   message: '',
   error: '',
@@ -36,8 +34,9 @@ export const reserveCar = createAsyncThunk(RESERVATION, async ({ user, reservati
     },
     body: JSON.stringify({ ...reservation }),
   });
-  const data = await response.json();
-  return data;
+  if (response.status >= 200 && response.status < 300) {
+    return reservation;
+  } return null;
 });
 
 export const deleteReservation = createAsyncThunk(DELETE_RESERVATION, async ({ user, id }) => {
@@ -55,16 +54,7 @@ export const deleteReservation = createAsyncThunk(DELETE_RESERVATION, async ({ u
 const reservationSlice = createSlice({
   name: 'reservations',
   initialState,
-  reducers: {
-    addReservation: (state, action) => ({
-      ...state,
-      reservations: action.payload,
-    }),
-    removeReservation: (state, action) => ({
-      ...state,
-      reservations: state.reservations.filter((reservation) => reservation.id !== action.payload),
-    }),
-  },
+  reducers: { },
   extraReducers: (builder) => {
     builder
       .addCase(reserveCar.pending, (state) => ({
@@ -73,13 +63,8 @@ const reservationSlice = createSlice({
       }))
       .addCase(reserveCar.fulfilled, (state, action) => ({
         ...state,
-        reservations: {
-          ...(action.payload.status === 201 ? action.payload.data : {}),
-          ...state.reservations,
-        },
-        message: action.payload.message,
-        status: action.payload.status,
-        error: action.payload.error,
+        payload: [...state.payload, action.payload],
+        message: 'Reservation successfully created',
       }))
       .addCase(reserveCar.rejected, (state, action) => ({
         ...state,
@@ -92,9 +77,7 @@ const reservationSlice = createSlice({
       }))
       .addCase(fetchReservations.fulfilled, (state, action) => ({
         ...state,
-        reservations: action.payload,
-        status: 'success',
-        error: action.payload.error,
+        ...action.payload,
       }))
       .addCase(fetchReservations.rejected, (state, action) => ({
         ...state,

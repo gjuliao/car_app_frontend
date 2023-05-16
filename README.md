@@ -86,7 +86,7 @@ cd car_app_frontend
 Install dependancies with:
 
 ```bash
-bundle install
+npm install
 ```
 
 ### Usage
@@ -94,7 +94,7 @@ bundle install
 To run the project, execute the following command:
 
 ```bash
-rails s
+npm run dev
 ```
 
 ### Run tests
@@ -102,7 +102,7 @@ rails s
 To run tests, run the following command:
 
 ```sh
-rspec spec
+npm run test
 ```
 
 ### Deployment
@@ -172,8 +172,7 @@ If you like this project please give it a star.
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank the Microverse team for the creation of this example project.
-
+Special thanks to [Murat Korkmaz for Vespa- Resnponsive Design](https://www.behance.net/gallery/26425031/Vespa-Responsive-Redesign)
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LICENSE -->

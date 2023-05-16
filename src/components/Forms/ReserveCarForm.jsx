@@ -74,7 +74,7 @@ const ReserveCarForm = () => {
             {params.id
               ? (
                 <option value={params.id}>
-                  {cars.payload.filter((car) => car.id === parseInt(params.id, 10))[0].brand}
+                  {cars.payload?.filter((car) => car.id === parseInt(params.id, 10))[0].brand}
                 </option>
               ) : (
                 cars.payload?.map((car) => (

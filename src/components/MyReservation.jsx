@@ -14,7 +14,7 @@ const MyReservation = () => {
   const userId = useSelector((state) => state.session.data.payload.id);
 
   const getCarImage = (id) => {
-    const { image } = cars.find((car) => car.id === id);
+    const image = cars.find((car) => car.id === id);
     return image;
   };
 
@@ -29,7 +29,12 @@ const MyReservation = () => {
           const carImage = getCarImage(car.id);
           return (
             <div key={car.id} className={styles.myreservation}>
-              <ReserveCard start={car.start_date} back={car.return_date} image={carImage} />
+              <ReserveCard
+                start={car.start_date}
+                back={car.return_date}
+                image={carImage}
+                city={car.city}
+              />
             </div>
           );
         })

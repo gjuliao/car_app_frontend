@@ -9,11 +9,12 @@
 .card_container {
   border: 2px solid rgb(232, 231, 231);
   border-radius: 10px;
-  width: 75%;
+  width: 95%;
   display: flex;
   margin: 2%;
   padding: 5%;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  justify-content: space-between;
 }
 
 .car_image {
@@ -22,7 +23,6 @@
 
 .body_container {
   margin: auto;
-  width: 60%;
 }
 
 .btn {
@@ -40,10 +40,21 @@
   display: flex;
   font-size: 0.6rem;
   justify-content: space-between;
+  width: 380px;
+}
+
+.dates p {
+  width: 100%;
+}
+
+.dates p strong {
+  padding-right: 3%;
+  font-size: 0.8rem;
 }
 
 .dates p {
   padding: 2%;
+  font-size: 0.8rem;
 }
 
 @media only screen and (max-width: 600px) {
@@ -69,6 +80,8 @@
 
   .dates {
     flex-direction: column;
+    width: 220px;
+    margin: auto;
   }
 
   .body_container {

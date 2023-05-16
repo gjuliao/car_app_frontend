@@ -1,6 +1,8 @@
 .onTopContainer {
   /* background-color: #B0EACD; */
-  background-image: url(../assets/images/green_texture_1.jpg);
+
+  /* background-image: url(../assets/images/green_texture_1.jpg); */
+  background: rgb(149, 192, 16);
   background-size: cover;
   height: 100vh;
   width: 100vw;

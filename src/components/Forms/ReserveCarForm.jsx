@@ -1,14 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { addReservation, reserveCar } from '../../redux/reservation/reservationSlice';
+import { reserveCar } from '../../redux/reservation/reservationSlice';
 import formStyle from '../../styles/ReserveCardForm.module.css';
 
 const ReserveCarForm = () => {
   const params = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { user } = useSelector((state) => state.session.data);
   const { message, error } = useSelector((state) => state.reservations);
   const cars = useSelector((state) => state.carlist.cars);
 
@@ -19,7 +18,9 @@ const ReserveCarForm = () => {
     endDate: '',
   });
 
-  if (!user) navigate('/');
+  let myUser = localStorage.getItem('user');
+  if (myUser) myUser = JSON.parse(myUser);
+  if (!myUser) navigate('/');
 
   const handleInput = (event) => {
     const { name, value } = event.target;
@@ -35,10 +36,10 @@ const ReserveCarForm = () => {
     };
     const carReservation = {
       reservation,
-      user: user.payload.id,
+      user: myUser.payload.id,
     };
     dispatch(reserveCar(carReservation));
-    dispatch(addReservation(carReservation));
+    // dispatch(addReservation(carReservation));
   };
 
   const handleNavigation = () => {
@@ -52,7 +53,7 @@ const ReserveCarForm = () => {
   return (
     <form onSubmit={handleSubmit} className={formStyle.formContainer}>
       <div className={formStyle.car__background} />
-      { !message ? null : <p className={formStyle.success}>{message}</p>}
+      {/* { !message ? null : <p className={formStyle.success}>{message}</p>} */}
       <h1 className={formStyle.header}>Reserve Latest Model Cars </h1>
       <p className={formStyle.description}>
         Lorem Ipsum is simply dummy text of the printing and typesetting industry.

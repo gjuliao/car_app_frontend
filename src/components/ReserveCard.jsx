@@ -2,7 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from '../styles/MyReservations.module.css';
 
-function ReserveCard({ start, back, image }) {
+function ReserveCard({
+  start, back, image, city,
+}) {
   return (
     <div className={styles.card_container}>
       <img src={image} alt="bmw" className={styles.car_image} />
@@ -10,11 +12,17 @@ function ReserveCard({ start, back, image }) {
         <div className={styles.dates}>
           <p>
             <strong>Start date:</strong>
+            <br />
             {start}
           </p>
           <p>
             <strong>Return date:</strong>
+            <br />
             {back}
+          </p>
+          <p>
+            <strong>City:</strong>
+            {city}
           </p>
         </div>
       </div>
@@ -26,12 +34,14 @@ ReserveCard.propTypes = {
   start: PropTypes.string,
   back: PropTypes.string,
   image: PropTypes.string,
+  city: PropTypes.string,
 };
 
 ReserveCard.defaultProps = {
   start: '',
   back: '',
   image: '',
+  city: '',
 };
 
 export default ReserveCard;

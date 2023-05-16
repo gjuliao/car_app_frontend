@@ -15,9 +15,13 @@
   margin-bottom: 15%;
 }
 
+.carImage {
+  position: relative;
+}
+
 .carCard {
   height: 65rem;
-  margin-top: 25%;
+  margin-top: 10%;
   margin-bottom: 25%;
   padding-top: 5%;
   padding-bottom: 20%;
@@ -25,12 +29,15 @@
 
 .car {
   width: 100%;
-  padding-top: 15%;
+  padding-top: 5%;
   margin-bottom: 10%;
   z-index: 2;
-  left: 3%;
   margin-left: -15%;
   height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 67%;
+  transform: translate(-50%, -50%);
 }
 
 .carBack {
@@ -46,11 +53,17 @@
 .carDescription {
   padding-left: 10%;
   margin-top: 10%;
+  color: gray;
+}
+
+.carDescription h4 {
+  color: black;
 }
 
 .carDescription h6 {
   margin-top: 7%;
   margin-bottom: 15%;
+  color: gray;
 }
 
 .carSocial {
@@ -91,12 +104,13 @@
     border-bottom: 1px solid lightgray;
     padding-bottom: 5%;
     margin-top: 18%;
+    color: black !important;
   }
 
   .carLatest h6 {
     margin-top: 2%;
     width: 100%;
-    color: lightgray;
+    color: gray;
     margin-bottom: 2%;
   }
 

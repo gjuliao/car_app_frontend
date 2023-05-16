@@ -26,10 +26,14 @@ const MyReservation = () => {
       { reservations?.length > 0 ? (
         reservations?.map((car) => {
           const carImage = getCarImage(car.car_id);
-          console.log(car.id);
           return (
             <div key={car.id} className={styles.myreservation}>
-              <ReserveCard start={car.start_date} back={car.return_date} image={carImage} />
+              <ReserveCard
+                start={car.start_date}
+                back={car.return_date}
+                image={carImage}
+                city={car.city}
+              />
             </div>
           );
         })

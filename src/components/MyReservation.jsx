@@ -11,9 +11,12 @@ const MyReservation = () => {
   const reservations = useSelector((state) => state.reservations.reservations.payload);
   const cars = useSelector((state) => state.cars.list.payload);
 
-  const userId = useSelector((state) => state.session.data.user.payload.id);
+  const userId = useSelector((state) => state.session.data.payload.id);
 
-  const carImage = cars.find((car) => car.id === userId).image;
+  const getCarImage = (id) => {
+    const { image } = cars.find((car) => car.id === id);
+    return image;
+  };
 
   useEffect(() => {
     dispatch(fetchReservations(userId));
@@ -22,11 +25,14 @@ const MyReservation = () => {
   return (
     <div>
       { reservations?.length > 0 ? (
-        reservations?.map((car) => (
-          <div key={car.id} className={styles.myreservation}>
-            <ReserveCard start={car.start_date} back={car.return_date} image={carImage} />
-          </div>
-        ))
+        reservations?.map((car) => {
+          const carImage = getCarImage(car.id);
+          return (
+            <div key={car.id} className={styles.myreservation}>
+              <ReserveCard start={car.start_date} back={car.return_date} image={carImage} />
+            </div>
+          );
+        })
       ) : (
         <div className={styles.card_container}>
           <Link to="/reservation" className={styles.btn} type="button">Rent a Car</Link>

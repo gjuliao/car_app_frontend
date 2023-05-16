@@ -7,6 +7,7 @@ import 'swiper/swiper.min.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faForward, faBackward } from '@fortawesome/free-solid-svg-icons';
 import '@fortawesome/fontawesome-svg-core/styles.css';
+import { Link } from 'react-router-dom';
 import CarCard from './CarCard';
 import styles from '../styles/Main.module.css';
 import { fetchCars } from '../redux/carlistSlice';
@@ -56,9 +57,9 @@ function ProductSlider() {
             slidesPerView: 1,
             spaceBetween: 150,
           },
-          768: {
-            slidesPerView: 1,
-            spaceBetween: 150,
+          800: {
+            slidesPerView: 2,
+            spaceBetween: 80,
           },
           1024: {
             slidesPerView: 3,
@@ -71,18 +72,20 @@ function ProductSlider() {
         }}
         onSwiper={handleSwiper}
       >
-        {cars.length > 0 ? (
+        {cars?.length > 0 ? (
           cars.map((car) => (
             <SwiperSlide key={car.id}>
-              <CarCard
-                key={car.id}
-                brand={car.brand}
-                image={car.image}
-                model={car.model}
-                price={car.price}
-                electric={car.electric}
-                description={car.description}
-              />
+              <Link to={`/cars/${car.id}`}>
+                <CarCard
+                  key={car.id}
+                  brand={car.brand}
+                  image={car.image}
+                  model={car.model}
+                  price={car.price}
+                  electric={car.electric}
+                  description={car.description}
+                />
+              </Link>
             </SwiperSlide>
           ))
         ) : (

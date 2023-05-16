@@ -8,7 +8,7 @@ const ReserveCarForm = () => {
   const params = useParams();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { user } = useSelector((state) => state.auth);
+  const { user } = useSelector((state) => state.session.data);
   const { message, error } = useSelector((state) => state.reservations);
   const cars = useSelector((state) => state.carlist.cars);
 
@@ -35,7 +35,7 @@ const ReserveCarForm = () => {
     };
     const carReservation = {
       reservation,
-      userId: user.id,
+      user: user.payload.id,
     };
     dispatch(reserveCar(carReservation));
     dispatch(addReservation(carReservation));
@@ -74,7 +74,7 @@ const ReserveCarForm = () => {
             {params.id
               ? (
                 <option value={params.id}>
-                  {cars.payload.filter((car) => car.id === parseInt(params.id, 10))[0].name}
+                  {cars.payload?.filter((car) => car.id === parseInt(params.id, 10))[0].brand}
                 </option>
               ) : (
                 cars.payload?.map((car) => (

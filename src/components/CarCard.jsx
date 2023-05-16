@@ -7,7 +7,8 @@ const CarCard = ({
   brand, image, model, description,
 }) => (
   <div className={styles.carCard}>
-    <div className={styles.carBack}>
+    <div className={styles.carImage}>
+      <div className={styles.carBack} />
       <img className={styles.car} src={image} alt="bmw-car" />
     </div>
     <div className={styles.carDescription}>

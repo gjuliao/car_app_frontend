@@ -104,7 +104,6 @@
     width: 110%;
     position: relative;
     margin-left: 6%;
-    height: 50vh;
     margin-top: 8%;
   }
 
@@ -112,28 +111,48 @@
     margin-right: 50px !important;
   }
 
+  .carImage {
+    position: relative;
+    padding: 2rem;
+  }
+
   .carCard {
     width: 20rem;
     height: 20rem;
-    margin: 0;
+    margin-top: 100px;
     padding: 0;
   }
 
   .car {
-    width: 120%;
-    height: 140%;
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 67%;
+    transform: translate(-50%, -50%);
   }
 
   .carBack {
-    height: 140px;
-    width: 210px;
+    height: 250px;
+    width: 300px;
     padding-top: 0;
-    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .carBack::after,
+  .car::after {
+    content: "";
+    display: table;
+    clear: both;
   }
 
   .carDescription {
-    margin: 0;
-    padding-left: 0;
+    margin-top: 100px;
+    padding-top: 0;
+    width: 100%;
   }
 
   .carDescription h6 {

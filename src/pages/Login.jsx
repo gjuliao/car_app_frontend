@@ -4,6 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import styles from '../styles/Login.module.css';
 import logo from '../assets/images/logo.png';
+import openedEye from '../assets/images/opened_eye.png';
+import closedEye from '../assets/images/closed_eye.png';
 import { login, clearError } from '../redux/sessionSlice';
 import { getUser } from '../redux/Auth/auth';
 
@@ -13,6 +15,7 @@ const Login = () => {
   const session = useSelector((store) => store.session);
   const [formData, setFormData] = useState({});
   const [isFormValid, setIsFormValid] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
 
   const changeHandler = (e) => {
     const property = e.target.name;
@@ -20,6 +23,10 @@ const Login = () => {
       ...formData,
       [property]: e.target.value,
     });
+  };
+
+  const toggleShow = () => {
+    setShowPassword(!showPassword);
   };
 
   const sendForm = (e) => {
@@ -49,8 +56,8 @@ const Login = () => {
   }, [session, navigate]);
 
   useEffect(() => {
-    dispatch(clearError())
-  }, [])
+    dispatch(clearError());
+  }, []);
 
   return (
     <section className={styles.onTopContainer}>
@@ -63,9 +70,23 @@ const Login = () => {
             <img src={logo} alt="logo" />
             <p>LOG IN</p>
             <input type="text" placeholder="email" name="email" onChange={changeHandler} />
-            <input type="password" placeholder="password" name="password" onChange={changeHandler} />
+            <div className={styles.secretField}>
+              <input
+                className={styles.secretInput}
+                type={showPassword ? 'text' : 'password'}
+                placeholder="password"
+                name="password"
+                onChange={changeHandler}
+              />
+              <button className={styles.eye} type="button" onClick={toggleShow}>
+                <img
+                  src={showPassword ? openedEye : closedEye}
+                  alt="eye"
+                />
+              </button>
+            </div>
             <p className={styles.error}>{session.data.message}</p>
-            <button type="submit" disabled={!isFormValid}>LOGIN</button>
+            <button className={styles.submit} type="submit" disabled={!isFormValid}>LOGIN</button>
             <Link to="/register">Create account</Link>
           </form>
         </div>

@@ -61,21 +61,27 @@ const sessionSlice = createSlice({
       state.data = {
         ...state.data,
         message: '',
-      }
-    }
+      };
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(signUp.fulfilled, (state, action) => {
       state.data = action.payload;
     });
-    builder.addCase(signUp.rejected, (state, action) => {
-      state.data = { message: "Login rejected by connection problem" };
+    builder.addCase(signUp.pending, (state) => {
+      state.data = { message: 'Signup is taking too long. Please wait...' };
+    });
+    builder.addCase(signUp.rejected, (state) => {
+      state.data = { message: 'Login rejected by connection problem' };
     });
     builder.addCase(login.fulfilled, (state, action) => {
       state.data = action.payload;
     });
-    builder.addCase(login.rejected, (state, action) => {
-      state.data = { message: "Login rejected by connection problem" };
+    builder.addCase(login.pending, (state) => {
+      state.data = { message: 'Login is taking too long. Please wait...' };
+    });
+    builder.addCase(login.rejected, (state) => {
+      state.data = { message: 'Login rejected by connection problem' };
     });
   },
 });

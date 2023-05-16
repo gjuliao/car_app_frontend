@@ -1,0 +1,44 @@
+ul {
+  background: rgb(149, 192, 16);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  list-style: none;
+  gap: 3rem;
+  padding: 3rem;
+}
+
+li {
+  border: 0.1rem white solid;
+  min-width: 15rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  gap: 1rem;
+}
+
+button {
+  padding: 0.3rem;
+  background: rgb(149, 192, 16);
+  color: white;
+  font-weight: bold;
+  border: solid white 0.1rem;
+  border-radius: 0.3rem;
+}
+
+button:hover {
+  background-color: red;
+  color: black;
+}
+
+/*
+Desktop view
+*/
+@media only screen and (min-width: 800px) {
+
+  ul {
+    padding: 4rem 6rem;
+  }
+}

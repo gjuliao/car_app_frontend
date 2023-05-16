@@ -45,15 +45,12 @@
 
 .dates p {
   width: 100%;
+  padding: 2%;
+  font-size: 0.8rem;
 }
 
 .dates p strong {
   padding-right: 3%;
-  font-size: 0.8rem;
-}
-
-.dates p {
-  padding: 2%;
   font-size: 0.8rem;
 }
 

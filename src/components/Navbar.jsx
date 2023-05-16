@@ -25,6 +25,9 @@ const Navbar = () => {
   const [menuItems, setMenuItems] = useState('');
   const location = useLocation();
 
+  let myUser = localStorage.getItem('user');
+  if (myUser) myUser = JSON.parse(myUser);
+
   const toggleMenu = useCallback(() => {
     setIsOpen(!isOpen);
   }, [isOpen]);
@@ -32,7 +35,6 @@ const Navbar = () => {
   const handleLogout = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
-    localStorage.removeItem('jti');
     window.location.href = '/';
   };
   useEffect(() => {
@@ -70,12 +72,18 @@ const Navbar = () => {
                   <NavLink to="/my-reservation" style={handleActive} className={navbar.link} onClick={toggleMenu}>
                     My Reservation
                   </NavLink>
-                  <NavLink to="/add-car" style={handleActive} className={navbar.link} onClick={toggleMenu}>
-                    Add car
-                  </NavLink>
-                  <NavLink to="/delete-car" style={handleActive} className={navbar.link} onClick={toggleMenu}>
-                    Delete car
-                  </NavLink>
+                  {
+                  myUser?.payload.role === 'admin' ? (
+                    <>
+                      <NavLink to="/add-car" style={handleActive} className={navbar.link} onClick={toggleMenu}>
+                        Add Car
+                      </NavLink>
+                      <NavLink to="/delete-car" style={handleActive} className={navbar.link} onClick={toggleMenu}>
+                        Delete Car
+                      </NavLink>
+                    </>
+                  ) : (<></>)
+                    }
                   <NavLink to="/" className={navbar.logout} onClick={handleLogout}>
                     Log out
                   </NavLink>
@@ -92,7 +100,8 @@ const Navbar = () => {
                   </NavLink>
                 </>
               )
-}
+            }
+
             <div className={navbar.nav__footer}>
               <div className={navbar.social__icons}>
                 <NavLink to="https://twitter.com/" className={navbar.social_links}>

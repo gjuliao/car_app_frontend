@@ -60,8 +60,10 @@ export const deleteCar = createAsyncThunk('cars/deleteCar', async (id) => {
       Authorization: localStorage.getItem('token'),
     },
   });
-  const deletedCar = await response.json();
-  return deletedCar;
+  if (response.status >= 200 && response.status < 300) {
+    return id;
+  }
+  return null;
 });
 
 const carsSlice = createSlice({
@@ -122,7 +124,10 @@ const carsSlice = createSlice({
       .addCase(deleteCar.fulfilled, (state, action) => ({
         ...state,
         status: 'success',
-        cars: state.cars.filter((car) => car.id !== action.payload),
+        cars: {
+          temporal: action.payload,
+          payload: state.cars.payload.filter((car) => car.id !== parseInt(action.payload, 10)),
+        },
         message: action.payload,
       }))
       .addCase(deleteCar.rejected, (state, action) => ({

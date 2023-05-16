@@ -17,9 +17,10 @@ li {
   justify-content: space-between;
   padding: 1rem;
   gap: 1rem;
+  background: rgb(90, 117, 10);
 }
 
-button {
+.delete{
   padding: 0.3rem;
   background: rgb(149, 192, 16);
   color: white;
@@ -28,7 +29,7 @@ button {
   border-radius: 0.3rem;
 }
 
-button:hover {
+.delete:hover {
   background-color: red;
   color: black;
 }
@@ -37,7 +38,6 @@ button:hover {
 Desktop view
 */
 @media only screen and (min-width: 800px) {
-
   ul {
     padding: 4rem 6rem;
   }

@@ -2,7 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from '../styles/MyReservations.module.css';
 
-function ReserveCard({ start, back, image, city }) {
+function ReserveCard({
+  start, back, image, city,
+}) {
   return (
     <div className={styles.card_container}>
       <img src={image} alt="bmw" className={styles.car_image} />

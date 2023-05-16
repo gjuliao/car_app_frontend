@@ -3,6 +3,7 @@ import { NavLink, useLocation } from 'react-router-dom';
 import { FaFacebookF, FaVimeoV, FaPinterestP } from 'react-icons/fa';
 import { AiOutlineTwitter } from 'react-icons/ai';
 import { TiSocialGooglePlus } from 'react-icons/ti';
+import { useSelector } from 'react-redux';
 import getCurrentDate from '../common/utils';
 import token from '../redux/Auth/token';
 import navbar from '../styles/Navbar.module.css';
@@ -37,6 +38,8 @@ const Navbar = () => {
     localStorage.removeItem('user');
     window.location.href = '/';
   };
+  const user = useSelector((state) => state.session.data.payload);
+
   useEffect(() => {
     switch (location.pathname) {
       case '/add-car':
@@ -73,7 +76,7 @@ const Navbar = () => {
                     My Reservation
                   </NavLink>
                   {
-                  myUser?.payload.role === 'admin' ? (
+                  user.role === 'admin' ? (
                     <>
                       <NavLink to="/add-car" style={handleActive} className={navbar.link} onClick={toggleMenu}>
                         Add Car
@@ -83,6 +86,7 @@ const Navbar = () => {
                       </NavLink>
                     </>
                   ) : (<></>)
+
                     }
                   <NavLink to="/" className={navbar.logout} onClick={handleLogout}>
                     Log out

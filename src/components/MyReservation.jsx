@@ -8,13 +8,12 @@ import ReserveCard from './ReserveCard';
 
 const MyReservation = () => {
   const dispatch = useDispatch();
-  const reservations = useSelector((state) => state.reservations.reservations.payload);
-  const cars = useSelector((state) => state.cars.list.payload);
-
+  const reservations = useSelector((state) => state.reservations.payload);
+  const cars = useSelector((state) => state.carlist.cars.payload);
   const userId = useSelector((state) => state.session.data.payload.id);
 
   const getCarImage = (id) => {
-    const { image } = cars.find((car) => car.id === id);
+    const image = cars.find((car) => car.id === id)?.image || undefined;
     return image;
   };
 
@@ -26,7 +25,8 @@ const MyReservation = () => {
     <div>
       { reservations?.length > 0 ? (
         reservations?.map((car) => {
-          const carImage = getCarImage(car.id);
+          const carImage = getCarImage(car.car_id);
+          console.log(car.id);
           return (
             <div key={car.id} className={styles.myreservation}>
               <ReserveCard start={car.start_date} back={car.return_date} image={carImage} />

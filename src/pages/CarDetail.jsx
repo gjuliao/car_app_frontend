@@ -40,7 +40,6 @@ export default function Detail() {
               <p>You need to be logged in to reserve a car</p>
             ) : (null)}
 
-
             {user.payload?.role === 'admin' ? (
               <p>Administrators can not reserve a car</p>
             ) : (null)}
@@ -49,7 +48,7 @@ export default function Detail() {
               <Link to={`/reservation/${id}`}>
                 <button type="button" className={styles.reserveBtn}>Reserve</button>
               </Link>
-            ):(null)}
+            ) : (null)}
 
           </div>
         </section>

@@ -1,9 +1,6 @@
 .container {
   padding-top: 75px;
   padding-bottom: 20px;
-  background-image: url(../assets/images/green_texture_1.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .addForm {
@@ -14,7 +11,7 @@
 }
 
 .formInput {
-  border: 1px solid lightgray;
+  border: 1px solid  rgb(149, 192, 16);
   border-radius: 50px;
   height: 35px;
   padding: 0 20px;
@@ -24,12 +21,13 @@
 }
 
 .formInput::placeholder {
-  color: gray;
+  color: black;
+  font-size: 1rem;
 }
 
 .formText {
   border-radius: 15px;
-  border: 1px solid lightgray;
+  border: 1px solid rgb(149, 192, 16);
   height: 100px;
   padding: 10px 20px;
   margin: auto;
@@ -46,6 +44,7 @@
   width: 100%;
   max-width: 600px;
   margin: auto;
+  border: 1px solid rgb(149, 192, 16);
 }
 
 .submit {

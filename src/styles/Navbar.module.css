@@ -70,15 +70,8 @@
   left: 0;
 }
 
+.logout,
 .link {
-  font-size: 15px;
-  font-weight: 400;
-  margin-top: 20px;
-  width: 100%;
-  padding: 10px 0;
-}
-
-.logout {
   background: transparent;
   width: 100%;
   padding: 0.25rem 0;
@@ -92,7 +85,8 @@
   -o-transition: all 0.5s ease-in-out;
 }
 
-.logout:hover {
+.logout:hover,
+.link:hover {
   background: rgb(149, 192, 16);
   color: #fff;
 }
@@ -136,7 +130,7 @@
   color: blue;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 768px) {
   .menu__bars {
     display: none;
   }

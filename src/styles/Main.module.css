@@ -1,58 +1,48 @@
 .main {
-  padding-left: 6%;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: center;
+  padding: 0 1.5rem;
 }
 
 .carLatest {
-  margin-top: 0;
-  margin-bottom: 10%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
 }
 
 .productSlider {
-  width: 90%;
-  margin-top: 5%;
-  max-height: 90vh;
-  overflow: hidden;
-  margin-bottom: 15%;
-}
-
-.carImage {
-  position: relative;
+  display: flex;
 }
 
 .carCard {
-  height: 65rem;
-  margin-top: 10%;
-  margin-bottom: 25%;
-  padding-top: 5%;
-  padding-bottom: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
 }
 
-.car {
-  width: 100%;
-  padding-top: 5%;
-  margin-bottom: 10%;
-  z-index: 2;
-  margin-left: -15%;
-  height: 100%;
-  position: absolute;
-  top: 50%;
-  left: 67%;
-  transform: translate(-50%, -50%);
+.carImage {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .carBack {
   background-color: lightgray;
   border-radius: 100%;
-  height: 250px;
-  width: 320px;
-  margin-left: 7%;
-  padding-top: 5%;
-  padding-bottom: 15%;
+  height: auto;
+  width: auto;
+}
+
+.car {
+  max-height: 150px;
+  min-width: auto;
 }
 
 .carDescription {
-  padding-left: 10%;
-  margin-top: 10%;
   color: gray;
 }
 
@@ -86,74 +76,26 @@
 /* Styles for medium screens and larger */
 @media screen and (min-width: 768px) {
   .main {
-    display: flex;
-    flex-direction: column;
-    margin-right: 1% !important;
-    margin-left: 3.5%;
-    max-width: 850px;
+    margin-left: 20vw;
+    max-width: 80vw;
   }
 
   .carLatest {
-    margin-top: 2%;
-    padding-left: 0;
-    margin-bottom: 0;
     border-bottom: 1px solid lightgray;
+    padding: 1rem 0;
+  }
+
+  .carLatest h6 {
+    color: gray;
   }
 
   .carDescription h4 {
     border-bottom: 1px solid lightgray;
-    padding-bottom: 5%;
-    margin-top: 18%;
     color: black !important;
-  }
-
-  .carLatest h6 {
-    margin-top: 2%;
-    width: 100%;
-    color: gray;
-    margin-bottom: 2%;
-  }
-
-  .productSlider {
-    width: 110%;
-    position: relative;
-    margin-left: 6%;
-    margin-top: 8%;
   }
 
   .productslide {
     margin-right: 50px !important;
-  }
-
-  .carImage {
-    position: relative;
-    padding: 2rem;
-  }
-
-  .carCard {
-    width: 20rem;
-    height: 20rem;
-    margin-top: 100px;
-    padding: 0;
-  }
-
-  .car {
-    width: 100%;
-    height: auto;
-    position: absolute;
-    top: 50%;
-    left: 67%;
-    transform: translate(-50%, -50%);
-  }
-
-  .carBack {
-    height: 250px;
-    width: 300px;
-    padding-top: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
   }
 
   .carBack::after,
@@ -161,12 +103,6 @@
     content: "";
     display: table;
     clear: both;
-  }
-
-  .carDescription {
-    margin-top: 100px;
-    padding-top: 0;
-    width: 100%;
   }
 
   .carDescription h6 {
@@ -188,30 +124,26 @@
   }
 
   .btnNext {
-    background-color: green;
-    position: fixed;
+    background-color: rgb(149, 192, 16);
     border-top-left-radius: 50%;
     border-bottom-left-radius: 50%;
-    padding: 2em;
-    z-index: 2;
-    right: 1%;
-    margin-top: 6%;
-    display: block;
     color: white;
     border: none;
+    display: block;
+    min-width: 50px;
+    margin-top: auto;
+    margin-bottom: auto;
   }
 
   .btnPrev {
-    background-color: green;
+    background-color: rgb(149, 192, 16);
     color: white;
-    position: fixed;
     border-top-right-radius: 50%;
     border-bottom-right-radius: 50%;
-    padding: 2em;
-    z-index: 2;
-    left: 20%;
-    margin-top: 6%;
-    display: block;
     border: none;
+    display: block;
+    min-width: 50px;
+    margin-top: auto;
+    margin-bottom: auto;
   }
 }

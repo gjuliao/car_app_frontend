@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { addCar } from '../redux/car/carSlice';
 import styles from '../styles/AddCar.module.css';
-import noImage from '../assets/images/no_image_available.jpg';
+import noImage from '../assets/images/no_image_available.png';
 
 const AddCar = () => {
   const navigate = useNavigate();

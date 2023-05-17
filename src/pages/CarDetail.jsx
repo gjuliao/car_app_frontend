@@ -35,13 +35,22 @@ export default function Detail() {
               </p>
               <DetailTable data={data.payload} />
             </div>
-            {Object.keys(user).length ? (
+
+            {Object.keys(user).length === 0 ? (
+              <p>You need to be logged in to reserve a car</p>
+            ) : (null)}
+
+
+            {user.payload?.role === 'admin' ? (
+              <p>Administrators can not reserve a car</p>
+            ) : (null)}
+
+            {Object.keys(user).length !== 0 && user.payload?.role !== 'admin' ? (
               <Link to={`/reservation/${id}`}>
                 <button type="button" className={styles.reserveBtn}>Reserve</button>
               </Link>
-            ) : (
-              <p>You need to be logged in to reserve a car</p>
-            )}
+            ):(null)}
+
           </div>
         </section>
       )}

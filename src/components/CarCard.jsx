@@ -8,8 +8,9 @@ const CarCard = ({
 }) => (
   <div className={styles.carCard}>
     <div className={styles.carImage}>
-      <div className={styles.carBack} />
-      <img className={styles.car} src={image} alt="bmw-car" />
+      <div className={styles.carBack}>
+        <img className={styles.car} src={image} alt="bmw-car" />
+      </div>
     </div>
     <div className={styles.carDescription}>
       <h4>

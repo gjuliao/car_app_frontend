@@ -39,10 +39,6 @@ function ProductSlider() {
       <button className={styles.btnPrev} type="button" onClick={slideToPrev}>
         <FontAwesomeIcon icon={faBackward} />
       </button>
-      <button className={styles.btnNext} type="button" onClick={slideToNext}>
-        <FontAwesomeIcon icon={faForward} />
-      </button>
-
       <Swiper
         freeMode
         grabCursor
@@ -51,23 +47,19 @@ function ProductSlider() {
         breakpoints={{
           0: {
             slidesPerView: 1,
-            spaceBetween: 150,
+            spaceBetween: 80,
           },
-          480: {
+          768: {
             slidesPerView: 1,
-            spaceBetween: 150,
+            spaceBetween: 80,
           },
-          800: {
+          992: {
             slidesPerView: 2,
             spaceBetween: 80,
           },
-          1024: {
+          1200: {
             slidesPerView: 3,
-            spaceBetween: 250,
-          },
-          1280: {
-            slidesPerView: 3,
-            spaceBetween: 300,
+            spaceBetween: 80,
           },
         }}
         onSwiper={handleSwiper}
@@ -92,6 +84,9 @@ function ProductSlider() {
           <h2>Cars not found</h2>
         )}
       </Swiper>
+      <button className={styles.btnNext} type="button" onClick={slideToNext}>
+        <FontAwesomeIcon icon={faForward} />
+      </button>
     </div>
   );
 }

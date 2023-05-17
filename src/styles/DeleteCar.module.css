@@ -1,5 +1,4 @@
 ul {
-  background: rgb(149, 192, 16);
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -10,14 +9,14 @@ ul {
 }
 
 li {
-  border: 0.1rem white solid;
+  border: 0.1rem rgb(90, 117, 10) solid;
+  border-radius: 1rem;
   min-width: 15rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 1rem;
   gap: 1rem;
-  background: rgb(90, 117, 10);
 }
 
 .delete {
@@ -37,7 +36,7 @@ li {
 /*
 Desktop view
 */
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 768px) {
   ul {
     padding: 4rem 6rem;
   }

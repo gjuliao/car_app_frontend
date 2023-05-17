@@ -29,7 +29,7 @@
 
 .form__label {
   text-align: left;
-  font-size: 14px;
+  font-size: 20px;
 }
 
 .header {
@@ -40,7 +40,7 @@
 
 .description {
   margin: 0.625rem 10vw;
-  font-size: 0.875rem;
+  font-size: 0.9rem;
 }
 
 .formContainer > *:not(.car__background) {
@@ -79,7 +79,8 @@
 .reservation__field input[type="date"],
 .reservation__field input[type="text"],
 .reservation__field > select {
-  height: 2.1875rem;
+  height: 2.4rem;
+  font-size: 1.2rem;
   border-radius: 0.625rem;
   background-color: var(--green);
   border: solid white 1px;
@@ -105,6 +106,7 @@
 
 input::placeholder {
   color: rgb(225, 225, 225);
+  font-size: 20px;
 }
 
 .reservation__field input[type="date"]:focus,

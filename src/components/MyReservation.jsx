@@ -22,7 +22,7 @@ const MyReservation = () => {
   }, []);
 
   return (
-    <div>
+    <div className={styles.maincontainer}>
       { reservations?.length > 0 ? (
         reservations?.map((car) => {
           const carImage = getCarImage(car.car_id);

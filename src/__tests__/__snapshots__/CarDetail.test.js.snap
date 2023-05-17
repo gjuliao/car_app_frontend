@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddCar renders without crashing 1`] = `
+<section
+  className="container"
+>
+  <div
+    className="photoArea"
+  >
+    <img
+      alt="car"
+      className="photo"
+    />
+  </div>
+  <div
+    className="infoArea"
+  >
+    <div
+      className="features"
+    >
+      <h1
+        className="title"
+      />
+      <p
+        className="subtitle"
+      >
+        - $NaN deposit upon any undefined purchase
+      </p>
+      <table
+        className="detailTable"
+      >
+        <tbody>
+          <tr>
+            <td
+              className="keyRow"
+            >
+              Price
+            </td>
+            <td
+              className="valueRow"
+            >
+              $
+              Loding...
+            </td>
+          </tr>
+          <tr>
+            <td
+              className="keyRow"
+            >
+              Brand
+            </td>
+            <td
+              className="valueRow"
+            >
+              Loding...
+            </td>
+          </tr>
+          <tr>
+            <td
+              className="keyRow"
+            >
+              Year
+            </td>
+            <td
+              className="valueRow"
+            >
+              Loding...
+            </td>
+          </tr>
+          <tr>
+            <td
+              className="keyRow"
+            >
+              Color
+            </td>
+            <td
+              className="valueRow"
+            >
+              Loding...
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>
+      You need to be logged in to reserve a car
+    </p>
+  </div>
+</section>
+`;

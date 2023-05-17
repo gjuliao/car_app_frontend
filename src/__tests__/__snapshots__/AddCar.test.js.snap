@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddCar renders without crashing 1`] = `
+<section
+  className="container"
+>
+  <form
+    className="addForm"
+    onSubmit={[Function]}
+  >
+    <input
+      className="formInput"
+      name="model"
+      onChange={[Function]}
+      placeholder="Model"
+      type="text"
+    />
+    <input
+      className="formInput"
+      name="brand"
+      onChange={[Function]}
+      placeholder="Brand"
+      type="text"
+    />
+    <input
+      className="formInput"
+      name="price"
+      onChange={[Function]}
+      placeholder="Price"
+      type="text"
+    />
+    <input
+      className="formInput"
+      name="year"
+      onChange={[Function]}
+      placeholder="Year"
+      type="date"
+    />
+    <input
+      className="formInput"
+      name="color"
+      onChange={[Function]}
+      placeholder="Color"
+      type="text"
+    />
+    <input
+      className="formInput"
+      name="accidents"
+      onChange={[Function]}
+      placeholder="Accidents"
+      type="text"
+    />
+    <select
+      className="formInput"
+      name="is_electric"
+      onChange={[Function]}
+      placeholder="Electric"
+      type="text"
+    >
+      <option
+        className="nullOption"
+        value={null}
+      >
+        Select: Electric or Gas
+      </option>
+      <option
+        value={true}
+      >
+        Electric
+      </option>
+      <option
+        value={false}
+      >
+        Gas
+      </option>
+    </select>
+    <input
+      className="formInput"
+      name="image"
+      onChange={[Function]}
+      placeholder="Image URL"
+      type="text"
+    />
+    <img
+      alt="upload model"
+      className="photo"
+      src=""
+    />
+    <textarea
+      className="formText"
+      name="description"
+      onChange={[Function]}
+      placeholder="Add description here..."
+    />
+    <button
+      className="submit"
+      disabled={true}
+      type="submit"
+    >
+      Create
+    </button>
+  </form>
+</section>
+`;

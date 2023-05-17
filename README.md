@@ -52,11 +52,6 @@ To check the Ruby on Rails Back-End for this project you can visit the following
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Key Features <a name="key-features"></a>
-  
-  #### [Pending the live demo](https://pending.onrender.com)
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>

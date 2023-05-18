@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AddCar renders without crashing 1`] = `
+exports[`AddCar page tets AddCar renders without crashing 1`] = `
 <section
   className="container"
 >

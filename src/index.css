@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/futura-pt');
+
+:root {
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+*,
+#root {
+  margin: 0;
+  padding: 0;
+  font-family: 'Futura PT', sans-serif;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+#white-bars {
+  background-color: white;
+}
+
+.progressSpinner {
+  margin-top: 40vh;
+}
+
+@media (min-width: 800px) {
+  .container {
+    display: flex;
+    width: 100vw;
+  }
+
+  .sidebar {
+    width: 20vw;
+    background-color: #ccc;
+    box-sizing: border-box;
+  }
+
+  .content {
+    flex: 1;
+    box-sizing: border-box;
+  }
+}

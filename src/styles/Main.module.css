@@ -1,0 +1,149 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: center;
+  padding: 0 1.5rem;
+}
+
+.carLatest {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+.productSlider {
+  display: flex;
+}
+
+.carCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.carImage {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carBack {
+  background-color: lightgray;
+  border-radius: 100%;
+  height: auto;
+  width: auto;
+}
+
+.car {
+  max-height: 150px;
+  min-width: auto;
+}
+
+.carDescription {
+  color: gray;
+}
+
+.carDescription h4 {
+  color: black;
+}
+
+.carDescription h6 {
+  margin-top: 7%;
+  margin-bottom: 15%;
+  color: gray;
+}
+
+.carSocial {
+  display: flex;
+  justify-content: space-around;
+}
+
+.carIcons {
+  width: 10%;
+  padding: 3%;
+  border-radius: 100%;
+  border: 1px solid gray;
+}
+
+.btnNext,
+.btnPrev {
+  display: none;
+}
+
+/* Styles for medium screens and larger */
+@media screen and (min-width: 768px) {
+  .main {
+    margin-left: 20vw;
+    max-width: 80vw;
+  }
+
+  .carLatest {
+    border-bottom: 1px solid lightgray;
+    padding: 1rem 0;
+  }
+
+  .carLatest h6 {
+    color: gray;
+  }
+
+  .carDescription h4 {
+    border-bottom: 1px solid lightgray;
+    color: black !important;
+  }
+
+  .productslide {
+    margin-right: 50px !important;
+  }
+
+  .carBack::after,
+  .car::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+  .carDescription h6 {
+    color: lightgray;
+    margin-top: 5%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 90%;
+    margin-bottom: 8%;
+  }
+
+  .carSocial {
+    width: 60%;
+    margin: auto;
+    color: lightgray;
+    z-index: 4;
+    display: flex;
+  }
+
+  .btnNext {
+    background-color: rgb(149, 192, 16);
+    border-top-left-radius: 50%;
+    border-bottom-left-radius: 50%;
+    color: white;
+    border: none;
+    display: block;
+    min-width: 50px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  .btnPrev {
+    background-color: rgb(149, 192, 16);
+    color: white;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 50%;
+    border: none;
+    display: block;
+    min-width: 50px;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+}

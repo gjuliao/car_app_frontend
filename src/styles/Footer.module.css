@@ -1,0 +1,36 @@
+.footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  margin: auto;
+  width: 120%;
+  bottom: 5%;
+  left: 0;
+  display: none;
+}
+
+.footerList {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .footer {
+    width: 110%;
+    height: 20%;
+    position: relative;
+    padding-top: 5%;
+    margin-left: -6%;
+    padding-left: 0;
+  }
+
+  .footerList {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    align-items: center;
+    margin: auto;
+  }
+}

@@ -1,5 +1,10 @@
 <a name="readme-top"></a>
 
+<div align="center">
+  <img src="./public/splash-logo.svg" alt="logo" width="256"  height="auto" />
+  <br/>
+</div>
+
 <!-- TABLE OF CONTENTS -->
 # 📗 Table of Contents
 
@@ -106,13 +111,15 @@ To run tests, run the following command:
 npm run test
 ```
 
-### Deployment
-
-This project would be deployed using:
-
-- [Render](https://render.com/)
-
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+### Kanban Board <a name="kanban-board"></a>
+  - Initial state of Kanban [Board](https://github.com/users/gjuliao/projects/2)
+  - <img src="./public/kanbanStart.png" alt="kanbanBoard" width="256"  height="auto" />
+    <br/>
+  - Number of team members at start and finish: 5 Team members.
+
 
 <!-- AUTHORS -->
 

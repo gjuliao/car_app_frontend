@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchCars } from '../redux/car/carSlice';
-import { deleteCar } from '../redux/car/carSlice';
+import { fetchCars, deleteCar } from '../redux/car/carSlice';
 import styles from '../styles/DeleteCar.module.css';
 
 const DeleteCar = () => {

@@ -31,7 +31,7 @@ To check the Ruby on Rails Back-End for this project you can visit the following
 
 ## 🛠 Built With <a name="built-with"></a>
 
-
+### Tech Stack <a name="tech-stack"></a>
   <ul>
     <li><a href="https://www.ruby-lang.org/en/documentation/">Ruby on Rails</a></li>
     <li><a href="https://www.ruby-lang.org/en/documentation/">React</a></li>
@@ -51,6 +51,10 @@ To check the Ruby on Rails Back-End for this project you can visit the following
 - **Styling uses CSS**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## 🚀 Live Demo <a name="live-demo"></a>
+
+- [Live Demo Link](https://carappcapstone.netlify.app/)
 
 <!-- GETTING STARTED -->
 

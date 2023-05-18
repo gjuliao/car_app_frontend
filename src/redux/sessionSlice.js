@@ -69,7 +69,7 @@ const sessionSlice = createSlice({
       state.data = action.payload;
     });
     builder.addCase(signUp.pending, (state) => {
-      state.data = { message: 'Signup is taking too long. Please wait...' };
+      state.data = { message: 'Please wait...' };
     });
     builder.addCase(signUp.rejected, (state) => {
       state.data = { message: 'Login rejected by connection problem' };
@@ -78,7 +78,7 @@ const sessionSlice = createSlice({
       state.data = action.payload;
     });
     builder.addCase(login.pending, (state) => {
-      state.data = { message: 'Login is taking too long. Please wait...' };
+      state.data = { message: 'Please wait...' };
     });
     builder.addCase(login.rejected, (state) => {
       state.data = { message: 'Login rejected by connection problem' };

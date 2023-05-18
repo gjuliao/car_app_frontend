@@ -5,7 +5,7 @@ const initialState = {
 };
 
 // const { VITE_API_1_URL } = import.meta.env; Global variable to be defined
-const baseUrl = 'http://127.0.0.1:3000/api/v1';
+const baseUrl = 'https://car-app-backend.onrender.com/api/v1';
 
 export const getCar = createAsyncThunk(
   'carDetail/getCar',

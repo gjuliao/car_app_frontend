@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { setUserData } from '../redux/sessionSlice';
 
-export default function Startup() {
+const Startup = () => {
   const dispatch = useDispatch();
   const token = localStorage.getItem('token');
   let user = localStorage.getItem('user');
@@ -17,4 +17,6 @@ export default function Startup() {
   return (
     <></>
   );
-}
+};
+
+export default Startup;

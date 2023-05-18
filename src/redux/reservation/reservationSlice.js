@@ -1,6 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-const reservationEndPoint = 'http://localhost:3000/api/v1/users';
+const reservationEndPoint = 'https://car-app-backend.onrender.com/api/v1/users';
 
 const initialState = {
   payload: [],

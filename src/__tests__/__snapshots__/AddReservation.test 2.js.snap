@@ -1,0 +1,118 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Reservation page renders without crashing 1`] = `
+<form
+  className="formContainer"
+  onSubmit={[Function]}
+>
+  <div
+    className="car__background"
+  />
+  <h1
+    className="header"
+  >
+    Reserve Latest Model Cars 
+  </h1>
+  <p
+    className="description"
+  >
+    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+  </p>
+  <p
+    style={
+      {
+        "color": "red",
+      }
+    }
+  />
+  <div
+    className="inputsContainer"
+  >
+    <div
+      className="reservation__field"
+    >
+      <select
+        id="carId"
+        name="carId"
+        onChange={[Function]}
+        required={true}
+        value=""
+      >
+        <option
+          value=""
+        >
+          -- Select a Car --
+        </option>
+      </select>
+    </div>
+    <div
+      className="reservation__field"
+    >
+      <label
+        className="form__label"
+        htmlFor="city"
+      >
+        City
+        <br />
+        <input
+          id="city"
+          name="city"
+          onChange={[Function]}
+          placeholder="City"
+          required={true}
+          type="text"
+          value=""
+        />
+      </label>
+    </div>
+    <div
+      className="reservation__field"
+    >
+      <label
+        className="form__label"
+        htmlFor="startDate"
+      >
+        Start date
+        <br />
+        <input
+          id="startDate"
+          name="startDate"
+          onChange={[Function]}
+          placeholder="Start Date"
+          required={true}
+          type="date"
+          value=""
+        />
+      </label>
+    </div>
+    <div
+      className="last"
+    >
+      <div
+        className="reservation__field"
+      >
+        <label
+          className="form__label"
+          htmlFor="endDate"
+        >
+          Return date
+          <br />
+          <input
+            id="endDate"
+            name="endDate"
+            onChange={[Function]}
+            required={true}
+            type="date"
+            value=""
+          />
+        </label>
+      </div>
+      <button
+        type="submit"
+      >
+        Reserve now
+      </button>
+    </div>
+  </div>
+</form>
+`;

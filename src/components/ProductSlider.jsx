@@ -12,7 +12,7 @@ import CarCard from './CarCard';
 import styles from '../styles/Main.module.css';
 import { fetchCars } from '../redux/carlistSlice';
 
-function ProductSlider() {
+const ProductSlider = () => {
   const dispatch = useDispatch();
   const cars = useSelector((state) => state.cars.list.payload);
 
@@ -89,6 +89,6 @@ function ProductSlider() {
       </button>
     </div>
   );
-}
+};
 
 export default ProductSlider;

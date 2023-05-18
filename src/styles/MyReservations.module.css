@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content: center;
   padding: 3rem 0;
+  align-items: center;
 }
 
 .myreservation {

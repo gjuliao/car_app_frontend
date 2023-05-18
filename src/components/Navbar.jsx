@@ -38,7 +38,7 @@ const Navbar = () => {
     localStorage.removeItem('user');
     window.location.href = '/';
   };
-  const user = useSelector((state) => state.session.data.payload);
+  const user = useSelector((state) => state.session?.data.payload);
 
   useEffect(() => {
     switch (location.pathname) {
@@ -76,7 +76,7 @@ const Navbar = () => {
                     My Reservation
                   </NavLink>
                   {
-                  user.role === 'admin' ? (
+                  user?.role === 'admin' ? (
                     <>
                       <NavLink to="/add-car" style={handleActive} className={navbar.link} onClick={toggleMenu}>
                         Add Car
